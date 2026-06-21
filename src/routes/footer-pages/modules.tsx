@@ -1,0 +1,53 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { FooterPageLayout } from "@/landingpage-ui/FooterPageLayout";
+
+export const Route = createFileRoute("/footer-pages/modules")({
+  component: ModulesPage,
+});
+
+const MODS = [
+  { name: "Admissions Portal", desc: "Digital applications, document checks, and automated approvals.", tag: "Operations" },
+  { name: "Student Information System", desc: "Unified student profile tracking complete academic and personal history.", tag: "Operations" },
+  { name: "Academic Planning", desc: "Manage subjects, terms, school timetables, and teacher syllabi.", tag: "Academics" },
+  { name: "Examination Management", desc: "Grade setups, exam schedules, automatic scorecards, and progress logs.", tag: "Academics" },
+  { name: "Finance & Accounting", desc: "Automated fee collections, invoices, ledger bookkeeping — native AED support.", tag: "Finance" },
+  { name: "HR & Payroll", desc: "Staff profiles, leave requests, payroll processing, and regulatory compliance.", tag: "Finance" },
+  { name: "Library Management", desc: "Complete library book catalogue, circulation ledger, fines, and return dates.", tag: "Operations" },
+  { name: "Transport Tracking", desc: "Bus route setup, live vehicle location, and automated parent alerts.", tag: "Operations" },
+  { name: "Parent Mobile App", desc: "Instant visibility on attendance records, fee dues, homework tasks, and notifications.", tag: "Engagement" },
+  { name: "Teacher Portal", desc: "Manage lesson plans, take attendance, input grades, and directly message parents.", tag: "Engagement" },
+  { name: "Principal Dashboard", desc: "Real-time KPIs showing academics, attendance, and finance records across campus.", tag: "Leadership" },
+  { name: "Multi-Campus Management", desc: "Consolidated dashboard to govern several schools from a single master console.", tag: "Leadership" },
+];
+
+function ModulesPage() {
+  return (
+    <FooterPageLayout
+      title="Platform Modules"
+      subtitle="A modular architecture built to scale. Pick what your school needs today, expand when ready."
+    >
+      <div className="space-y-10 text-[15px] leading-[1.7] text-[#2a2a2a]/85">
+        <p>
+          Studiqs brings every aspect of school operations together. Each module is fully functional on its own, but integrates seamlessly with others to power our central AI analytics engine.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          {MODS.map((m, idx) => (
+            <div key={m.name} className="border border-[#1a1a1a]/8 rounded-2xl bg-white p-6 shadow-sm">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-[10px] font-mono tracking-widest text-[#2a2a2a]/60 uppercase bg-[#1a1a1a]/5 px-2 py-0.5 rounded">
+                  {m.tag}
+                </span>
+                <span className="text-[11px] font-mono text-[#c97a3a] font-semibold">
+                  M.{String(idx + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <h3 className="font-display text-[18px] font-bold text-[#161616]">{m.name}</h3>
+              <p className="mt-2 text-[13.5px] text-[#2a2a2a]/75">{m.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </FooterPageLayout>
+  );
+}

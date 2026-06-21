@@ -1,0 +1,201 @@
+@import "tailwindcss" ;
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-brand-3: var(--brand-3);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+}
+
+:root {
+  --radius: 0.75rem;
+  --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.02 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 264);
+  --primary: oklch(0.55 0.21 261);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.97 0.01 248);
+  --secondary-foreground: oklch(0.2 0.04 265);
+  --muted: oklch(0.97 0.01 248);
+  --muted-foreground: oklch(0.5 0.02 258);
+  --accent: oklch(0.96 0.02 220);
+  --accent-foreground: oklch(0.2 0.04 265);
+  --destructive: oklch(0.6 0.24 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.93 0.01 256);
+  --input: oklch(0.93 0.01 256);
+  --ring: oklch(0.55 0.21 261);
+  --brand: oklch(0.55 0.21 261);   /* #2563EB */
+  --brand-2: oklch(0.7 0.16 232);  /* #0EA5E9 */
+  --brand-3: oklch(0.72 0.13 184); /* #14B8A6 */
+
+  --gradient-brand: linear-gradient(135deg, #2563EB 0%, #0EA5E9 50%, #14B8A6 100%);
+  --gradient-soft: linear-gradient(180deg, rgba(37,99,235,0.06) 0%, rgba(20,184,166,0.04) 100%);
+  --gradient-mesh: radial-gradient(at 20% 20%, rgba(37,99,235,0.18) 0px, transparent 50%),
+                   radial-gradient(at 80% 10%, rgba(14,165,233,0.16) 0px, transparent 50%),
+                   radial-gradient(at 60% 80%, rgba(20,184,166,0.14) 0px, transparent 50%);
+  --shadow-elegant: 0 30px 60px -25px rgba(37,99,235,0.25), 0 12px 30px -15px rgba(14,165,233,0.18);
+  --shadow-card: 0 1px 2px rgba(17,24,39,0.04), 0 8px 24px -12px rgba(17,24,39,0.08);
+}
+
+.dark {
+  --background: oklch(0.18 0.02 264);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.22 0.03 265);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.22 0.03 265);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.7 0.18 255);
+  --primary-foreground: oklch(0.15 0.02 264);
+  --secondary: oklch(0.28 0.03 260);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.28 0.03 260);
+  --muted-foreground: oklch(0.72 0.02 256);
+  --accent: oklch(0.28 0.03 260);
+  --accent-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.7 0.18 255);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
+
+@utility text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-brand {
+  background: var(--gradient-brand);
+}
+
+@utility bg-mesh {
+  background-image: var(--gradient-mesh);
+}
+
+@utility shadow-elegant {
+  box-shadow: var(--shadow-elegant);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+@utility glass-strong {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(24px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-14px) translateX(6px); }
+}
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(18px) translateX(-8px); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes blink-caret {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@utility animate-float { animation: float-slow 7s ease-in-out infinite; }
+@utility animate-float-slow { animation: float-slower 9s ease-in-out infinite; }
+@utility animate-fade-up { animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@utility animate-fade-in { animation: fade-in 0.6s ease-out both; }
+@utility animate-blink { animation: blink-caret 1s step-end infinite; }
+@utility animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 10s ease infinite;
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@utility reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@utility glass-nova {
+  background: rgba(245, 240, 230, 0.45);
+  backdrop-filter: blur(20px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 
+    0 10px 30px -10px rgba(27, 24, 18, 0.06), 
+    0 1px 1px rgba(255, 255, 255, 0.4) inset;
+}
+
