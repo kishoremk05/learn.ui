@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useScrolledPast } from "./hooks";
 
 const LINKS = ["About", "Stakeholders", "Platform", "Problem", "Why Studiqs", "Future"];
@@ -6,12 +6,47 @@ const LINKS = ["About", "Stakeholders", "Platform", "Problem", "Why Studiqs", "F
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const past = useScrolledPast(50);
+  const [isOverDarkSection, setIsOverDarkSection] = useState(true);
 
-  // Always dark bg (#161616) — both mobile and desktop
-  // Slightly more opaque shadow when scrolled
-  const shellClass = past
+  useEffect(() => {
+    const handleScroll = () => {
+      const darkSectionIds = ["hero-dark-band", "future", "contact"];
+      let overDark = false;
+
+      for (const id of darkSectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // The navbar has height ~70px. If any part of the dark section overlaps the navbar's position (viewport top to 70px)
+          if (rect.top <= 70 && rect.bottom >= 0) {
+            overDark = true;
+            break;
+          }
+        }
+      }
+      setIsOverDarkSection(overDark);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
+  // On mobile (when max-width is not md), if the navbar is currently over a dark section and mobile menu is closed,
+  // we use the beige background (#e9e2d4) for high contrast.
+  // Otherwise (over light sections), we use the default dark background (#161616).
+  const isMobileBeige = isOverDarkSection && !open;
+
+  const shellClass = isMobileBeige
+    ? "bg-[#e9e2d4] border-b border-[#161616]/10 md:bg-[#161616] md:border-white/15"
+    : past
     ? "bg-[#161616] shadow-[0_8px_32px_-10px_rgba(0,0,0,0.6)] border-b border-white/20"
     : "bg-[#161616] border-b border-white/15";
+
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${shellClass}`}>
@@ -21,7 +56,12 @@ export function Navbar() {
         } transition-[padding] duration-500`}
       >
         {/* Brand */}
-        <a href="#top" className="flex items-center gap-2 text-[#efeadd]">
+        <a
+          href="#top"
+          className={`flex items-center gap-2 transition-colors duration-500 ${
+            isMobileBeige ? "text-[#161616] md:text-[#efeadd]" : "text-[#efeadd]"
+          }`}
+        >
           <span className="font-display text-[20px] tracking-tight">
             Studiqs<sup className="text-[10px] ml-[1px]">®</sup>
           </span>
@@ -52,7 +92,7 @@ export function Navbar() {
           </a>
         </div>
 
-        {/* Mobile hamburger / X — always cream, always visible */}
+        {/* Mobile hamburger / X — dynamically styled to contrast with the active background */}
         <button
           aria-label={open ? "Close menu" : "Open menu"}
           id="mobile-menu-toggle"
@@ -66,7 +106,7 @@ export function Navbar() {
               <line x1="18" y1="4" x2="4" y2="18" />
             </svg>
           ) : (
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#efeadd" strokeWidth="2" strokeLinecap="round" aria-hidden>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke={isMobileBeige ? "#161616" : "#efeadd"} strokeWidth="2" strokeLinecap="round" className="transition-all duration-500" aria-hidden>
               <line x1="2" y1="6" x2="20" y2="6" />
               <line x1="2" y1="11" x2="20" y2="11" />
               <line x1="2" y1="16" x2="20" y2="16" />

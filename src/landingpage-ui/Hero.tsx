@@ -17,6 +17,7 @@ const SPARKLINE_POINTS = "4,42 16,35 28,28 40,22 52,16 64,12 76,10";
 function LiveDashboard() {
   return (
     <div
+      id="live-dashboard-card"
       className="w-full rounded-2xl overflow-hidden animate-fade-up select-none"
       style={{
         animationDelay: "600ms",
@@ -226,7 +227,7 @@ export function Hero() {
         <div
           className="absolute right-[-31px] pointer-events-none select-none overflow-hidden"
           style={{
-            top: "calc(50% + 50px)",
+            top: "calc(50% + 20px)",
             transform: "translateY(-50%) scaleX(0.95) scaleY(0.95)",
             transformOrigin: "right center",
             width: "max(100%, calc(90vh * 1.8989))",
@@ -271,7 +272,7 @@ export function Hero() {
 
         {/* Desktop content */}
         <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 sm:px-10 pt-[110px] pb-16 flex flex-col justify-between min-h-screen">
-          <div className="flex flex-col justify-center flex-1">
+          <div className="flex flex-col justify-center flex-1 pt-8">
             <h1
               className="font-display tracking-tight leading-[1.08] text-[38px] xl:text-[48px] max-w-[500px] animate-fade-up"
               style={{ color: "#161616", animationDelay: "60ms" }}
@@ -324,7 +325,7 @@ export function Hero() {
           </div>
 
           {/* Scroll cue */}
-          <div className="flex items-center gap-3 text-[9px] font-mono tracking-[0.24em] uppercase" style={{ color: "rgba(42,42,42,0.5)" }}>
+          <div className="absolute bottom-6 left-6 sm:left-10 flex items-center gap-3 text-[9px] font-mono tracking-[0.24em] uppercase" style={{ color: "rgba(42,42,42,0.5)" }}>
             <div className="flex flex-col items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: "rgba(42,42,42,0.4)" }} />
               <svg width="10" height="28" viewBox="0 0 10 28" fill="none" stroke="currentColor" strokeWidth="1" aria-hidden>
@@ -341,6 +342,7 @@ export function Hero() {
 
       {/* Dark top band */}
       <div
+        id="hero-dark-band"
         className="lg:hidden w-full"
         style={{
           background: "#161616",
@@ -420,6 +422,7 @@ export function Hero() {
 
       {/* Light dashboard section */}
       <div
+        id="mobile-dashboard-section"
         className="lg:hidden w-full"
         style={{
           background: "#e9e2d4",

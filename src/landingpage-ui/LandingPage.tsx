@@ -4,6 +4,7 @@ import { About } from "./About";
 import { Problem } from "./Problem";
 import { HowItWorks } from "./HowItWorks";
 import { Features } from "./Features";
+import { Modules } from "./Modules";
 import { StudentPortfolio } from "./StudentPortfolio";
 import { AIIntelligence } from "./AIIntelligence";
 import { PeopleSection } from "./PeopleSection";
@@ -23,6 +24,7 @@ export function LandingPage() {
       <HowItWorks />
       <StudentPortfolio />
       <Features />
+      <Modules />
       <AIIntelligence />
       <Problem />
       <WhyStudiqs />

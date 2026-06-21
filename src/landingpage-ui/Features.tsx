@@ -55,7 +55,7 @@ const HIGHLIGHTS = [
 
 export function Features() {
   return (
-    <SectionBg id="platform" className="py-24 sm:py-28 border-t border-[#1a1a1a]/10">
+    <SectionBg id="platform" variant="solid" className="py-24 sm:py-28 border-t border-[#1a1a1a]/10">
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10">
         {/* Centered Heading */}
         <div className="text-center max-w-[800px] mx-auto mb-14">
@@ -70,46 +70,38 @@ export function Features() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-10">
           {HIGHLIGHTS.map((h, i) => (
             <Reveal
               key={h.title}
               delay={i * 100}
               as="article"
-              className="bg-[#efeadd]/65 border rounded-3xl p-8 sm:p-10 flex flex-col hover:bg-[#efeadd] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_35px_-20px_rgba(20,20,20,0.15)]"
-              style={{ borderColor: h.borderColor }}
+              className="bg-white border border-[#1a1a1a]/10 rounded-3xl p-8 sm:p-10 flex flex-col hover:shadow-[0_20px_35px_-20px_rgba(26,26,26,0.08)] hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden"
             >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span 
-                    className="h-2.5 w-2.5 rounded-full shrink-0" 
-                    style={{ backgroundColor: h.color }} 
-                  />
-                  <h3 className="font-display text-[22px] sm:text-[24px] text-[#161616] font-semibold">
-                    {h.title}
-                  </h3>
-                </div>
-                <span className="text-[11px] tracking-widest text-[#2a2a2a]/55 font-mono">
-                  HIGHLIGHT {String(i + 1).padStart(2, "0")}
-                </span>
+              {/* Highlight Kicker */}
+              <div className="text-[11px] font-mono tracking-[0.2em] uppercase font-bold" style={{ color: h.color }}>
+                Highlight {String(i + 1).padStart(2, "0")}
               </div>
-
-              <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 flex-1">
+              
+              {/* Title */}
+              <h3 className="mt-2 font-display text-[22px] sm:text-[24px] font-bold text-[#161616]">
+                {h.title}
+              </h3>
+              
+              {/* Features List with Horizontal Dividers */}
+              <ul className="mt-8 flex flex-col">
                 {h.features.map((feat) => (
-                  <li key={feat} className="flex items-start gap-2.5">
-                    <svg
-                      className="mt-1.5 h-4 w-4 shrink-0"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                  <li 
+                    key={feat} 
+                    className="flex items-center gap-3 py-4 border-b border-[#1a1a1a]/10 last:border-b-0"
+                  >
+                    <span 
+                      className="text-[16px] font-bold shrink-0"
                       style={{ color: h.color }}
                     >
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span className="text-[14.5px] leading-snug text-[#2a2a2a]/85">
+                      →
+                    </span>
+                    <span className="text-[15px] text-[#2a2a2a]/85 leading-normal">
                       {feat}
                     </span>
                   </li>

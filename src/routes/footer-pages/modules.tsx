@@ -6,14 +6,11 @@ export const Route = createFileRoute("/footer-pages/modules")({
 });
 
 const MODS = [
-  { name: "Admissions Portal", desc: "Digital applications, document checks, and automated approvals.", tag: "Operations" },
+  { name: "Admissions & Enrollment", desc: "Digital applications, document verification, and automated approvals.", tag: "Operations" },
   { name: "Student Information System", desc: "Unified student profile tracking complete academic and personal history.", tag: "Operations" },
   { name: "Academic Planning", desc: "Manage subjects, terms, school timetables, and teacher syllabi.", tag: "Academics" },
   { name: "Examination Management", desc: "Grade setups, exam schedules, automatic scorecards, and progress logs.", tag: "Academics" },
-  { name: "Finance & Accounting", desc: "Automated fee collections, invoices, ledger bookkeeping — native AED support.", tag: "Finance" },
   { name: "HR & Payroll", desc: "Staff profiles, leave requests, payroll processing, and regulatory compliance.", tag: "Finance" },
-  { name: "Library Management", desc: "Complete library book catalogue, circulation ledger, fines, and return dates.", tag: "Operations" },
-  { name: "Transport Tracking", desc: "Bus route setup, live vehicle location, and automated parent alerts.", tag: "Operations" },
   { name: "Parent Mobile App", desc: "Instant visibility on attendance records, fee dues, homework tasks, and notifications.", tag: "Engagement" },
   { name: "Teacher Portal", desc: "Manage lesson plans, take attendance, input grades, and directly message parents.", tag: "Engagement" },
   { name: "Principal Dashboard", desc: "Real-time KPIs showing academics, attendance, and finance records across campus.", tag: "Leadership" },

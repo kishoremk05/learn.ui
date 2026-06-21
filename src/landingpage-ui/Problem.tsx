@@ -62,40 +62,48 @@ export function Problem() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Grid with Gaps layout in Pattern 1 */}
+        <Reveal delay={200} className="mt-14 rounded-3xl border border-white bg-white overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-px">
           {STAKEHOLDER_PROBLEMS.map((item, idx) => (
-            <Reveal
+            <div
               key={item.role}
-              delay={idx * 100}
-              className="group relative rounded-3xl border bg-[#efeadd]/65 p-8 sm:p-10 transition-all duration-300 hover:-translate-y-1 hover:bg-[#efeadd] hover:shadow-[0_20px_35px_-20px_rgba(20,20,20,0.15)]"
-              style={{ borderColor: item.borderColor }}
+              className="bg-[#efeadd]/65 hover:bg-[#efeadd]/85 p-8 sm:p-10 flex flex-col justify-between transition-colors duration-300 min-h-[280px]"
             >
-              <div className="flex items-center gap-3">
-                <span 
-                  className="h-2.5 w-2.5 rounded-full shrink-0" 
-                  style={{ backgroundColor: item.color }} 
-                />
-                <h3 className="font-display text-[22px] sm:text-[24px] text-[#161616] font-semibold">
-                  {item.role}
-                </h3>
+              <div>
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#2a2a2a]/45">
+                  <span>{String(idx + 1).padStart(2, "0")}</span>
+                  <span className="uppercase font-bold tracking-wider text-[9px]" style={{ color: item.color }}>
+                    Stakeholder
+                  </span>
+                </div>
+                
+                <div className="mt-6 flex items-center gap-3">
+                  <span 
+                    className="h-2.5 w-2.5 rounded-full shrink-0" 
+                    style={{ backgroundColor: item.color }} 
+                  />
+                  <h3 className="font-display text-[21px] sm:text-[22px] font-bold text-[#161616] leading-tight">
+                    {item.role}
+                  </h3>
+                </div>
+                
+                <ul className="mt-6 space-y-3.5">
+                  {item.points.map((pt, pIdx) => (
+                    <li key={pIdx} className="flex items-start gap-3">
+                      <span 
+                        className="mt-2 h-1.5 w-1.5 rounded-full shrink-0"
+                        style={{ backgroundColor: item.color }}
+                      />
+                      <span className="text-[14.5px] text-[#2a2a2a]/85 leading-snug">
+                        {pt}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              
-              <ul className="mt-8 space-y-4">
-                {item.points.map((pt, pIdx) => (
-                  <li key={pIdx} className="flex items-start gap-3">
-                    <span 
-                      className="mt-1.5 h-1.5 w-1.5 rounded-full shrink-0"
-                      style={{ backgroundColor: item.color }}
-                    />
-                    <span className="text-[15px] sm:text-[16px] text-[#2a2a2a]/85 leading-snug">
-                      {pt}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </SectionBg>
   );

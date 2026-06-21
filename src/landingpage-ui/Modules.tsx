@@ -1,20 +1,109 @@
+import { useState } from "react";
 import { Arrow, Reveal, SectionBg, SectionHeading } from "./atoms";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
-type Mod = { name: string; desc: string; tag: string };
+type Mod = { name: string; desc: string; tag: string; details: string[] };
 
 const MODS: Mod[] = [
-  { name: "Admissions Portal", desc: "Digital applications, document checks, approvals.", tag: "Operations" },
-  { name: "Student Information System", desc: "One profile per student. Lifetime history.", tag: "Operations" },
-  { name: "Academic Planning", desc: "Subjects, terms, timetables, syllabi.", tag: "Academics" },
-  { name: "Examination Management", desc: "Schedules, grading, scorecards, analytics.", tag: "Academics" },
-  { name: "Finance & Accounting", desc: "Fees, invoices, ledgers — AED native.", tag: "Finance" },
-  { name: "HR & Payroll", desc: "Staff records, leaves, salaries, compliance.", tag: "Finance" },
-  { name: "Library Management", desc: "Catalogue, circulation, fines, returns.", tag: "Operations" },
-  { name: "Transport Tracking", desc: "Routes, live buses, parent notifications.", tag: "Operations" },
-  { name: "Parent Mobile App", desc: "Attendance, fees, homework, circulars.", tag: "Engagement" },
-  { name: "Teacher Portal", desc: "Lessons, attendance, grades, comms.", tag: "Engagement" },
-  { name: "Principal Dashboard", desc: "Live KPIs across the entire campus.", tag: "Leadership" },
-  { name: "Multi-Campus Management", desc: "Run several schools from one console.", tag: "Leadership" },
+  { 
+    name: "Admissions & Enrollment", 
+    desc: "Digital applications, document verification, and automated approvals.", 
+    tag: "Operations",
+    details: [
+      "Customizable registration & enrollment forms",
+      "Secure digital document upload & verification",
+      "Automated evaluation workflows with conditional approvals",
+      "Instant email and SMS notification updates to parents"
+    ]
+  },
+  { 
+    name: "Student Information System", 
+    desc: "One profile per student. Lifetime history.", 
+    tag: "Operations",
+    details: [
+      "Unified academic, attendance & behavioral logs",
+      "Integrated extracurricular achievements & portfolio builders",
+      "Sibling & family relationships linkage",
+      "Confidential health reports and custom support plans"
+    ]
+  },
+  { 
+    name: "Academic Planning", 
+    desc: "Subjects, terms, timetables, syllabi.", 
+    tag: "Academics",
+    details: [
+      "Multi-term scheduling matrix builders",
+      "Conflict-free automatic room & teacher allocation",
+      "Syllabus distribution trackers & progress audits",
+      "Co-teacher assignments and substitution management"
+    ]
+  },
+  { 
+    name: "Examination Management", 
+    desc: "Schedules, grading, scorecards, analytics.", 
+    tag: "Academics",
+    details: [
+      "Flexible grading systems (GPA, CBSE, IB, custom matrices)",
+      "Automated report card compilation & digital distribution",
+      "Exam timetable generators & seating arrangement logs",
+      "Cohort performance analytics and grade curve adjustments"
+    ]
+  },
+  { 
+    name: "HR & Payroll", 
+    desc: "Staff records, leaves, salaries, compliance.", 
+    tag: "Finance",
+    details: [
+      "Staff profiles, credentials & contract management",
+      "Interactive leave application and validation dashboard",
+      "Salary structures with allowance/deduction configuration",
+      "Statutory compliance reporting & payslip printing"
+    ]
+  },
+  { 
+    name: "Parent Mobile App", 
+    desc: "Attendance, fees, homework, circulars.", 
+    tag: "Engagement",
+    details: [
+      "Real-time attendance alerts and check-in push notifications",
+      "Direct homework feedback loops and submission trackers",
+      "Integrated online fee payment gateways (AED native)",
+      "Official school circulars & classroom announcement board"
+    ]
+  },
+  { 
+    name: "Teacher Portal", 
+    desc: "Lessons, attendance, grades, comms.", 
+    tag: "Engagement",
+    details: [
+      "Fast digital attendance rosters with batch updates",
+      "Instant gradebook input & mark verification channels",
+      "Collaborative lesson planning template repository",
+      "Teacher-parent messaging center with translate features"
+    ]
+  },
+  { 
+    name: "Principal Dashboard", 
+    desc: "Live KPIs across the entire campus.", 
+    tag: "Leadership",
+    details: [
+      "Real-time enrollment, retention, and capacity figures",
+      "Income vs expense sheets & outstanding fee summaries",
+      "School-wide academic quality and cohort success curves",
+      "Staff utilization ratios & schedule compliance checks"
+    ]
+  },
+  { 
+    name: "Multi-Campus Management", 
+    desc: "Run several schools from one console.", 
+    tag: "Leadership",
+    details: [
+      "Single sign-on master control panel for multiple campuses",
+      "Branch-by-branch operational comparisons",
+      "Consolidated financial and tax statements",
+      "Global curriculum templates and assessment alignments"
+    ]
+  },
 ];
 
 const TAG_COLOR: Record<string, string> = {
@@ -26,6 +115,8 @@ const TAG_COLOR: Record<string, string> = {
 };
 
 export function Modules() {
+  const [selectedMod, setSelectedMod] = useState<Mod | null>(null);
+
   return (
     <SectionBg id="modules" className="py-24 sm:py-28">
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10">
@@ -45,46 +136,74 @@ export function Modules() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <Reveal delay={200} className="mt-14 rounded-3xl border border-white bg-white overflow-hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px">
           {MODS.map((m, i) => (
-            <Reveal
+            <div
               key={m.name}
-              delay={(i % 3) * 90 + Math.floor(i / 3) * 40}
-              className="group relative rounded-2xl border border-[#1a1a1a]/10 bg-[#efeadd]/80 backdrop-blur-sm p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-[#efeadd] hover:border-[#1a1a1a]/25 hover:shadow-[0_24px_40px_-24px_rgba(20,20,20,0.25)]"
+              className="bg-[#efeadd]/65 hover:bg-[#efeadd]/85 p-8 sm:p-10 flex flex-col justify-between transition-colors duration-300 min-h-[220px]"
             >
-              <div className="flex items-center justify-between">
-                <span
-                  className={`inline-flex items-center rounded-full px-2.5 py-1 text-[10.5px] tracking-[0.16em] uppercase ${TAG_COLOR[m.tag]}`}
-                >
-                  {m.tag}
-                </span>
-                <span className="text-[10.5px] tracking-widest text-[#2a2a2a]/50">
-                  M.{String(i + 1).padStart(2, "0")}
-                </span>
+              <div>
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#2a2a2a]/45">
+                  <span>{String(i + 1).padStart(2, "0")}</span>
+                  <span className={`rounded px-1.5 py-0.5 text-[8.5px] uppercase tracking-wider ${TAG_COLOR[m.tag]}`}>
+                    {m.tag}
+                  </span>
+                </div>
+
+                <h3 className="mt-6 font-display text-[19px] sm:text-[20px] font-bold text-[#161616] leading-tight">
+                  {m.name}
+                </h3>
+                <p className="mt-2 text-[14px] leading-[1.65] text-[#2a2a2a]/75">
+                  {m.desc}
+                </p>
               </div>
 
-              <h3 className="mt-8 font-display text-[22px] leading-tight text-[#161616]">
-                {m.name}
-              </h3>
-              <p className="mt-2 text-[14px] leading-[1.6] text-[#2a2a2a]/75">
-                {m.desc}
-              </p>
-
-              <div className="mt-7 flex items-center justify-between text-[13px] text-[#1a1a1a]/75">
-                <span className="inline-flex items-center gap-2 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                  Learn more
-                  <Arrow />
-                </span>
-                <span className="h-7 w-7 rounded-full border border-[#1a1a1a]/20 grid place-items-center group-hover:bg-[#1a1a1a] group-hover:text-[#efeadd] group-hover:border-[#1a1a1a] transition">
-                  <Arrow />
+              <div 
+                className="mt-6 flex items-center justify-between text-[12px] font-semibold text-[#161616] hover:text-[#c97a3a] transition-colors duration-200 cursor-pointer"
+                onClick={() => setSelectedMod(m)}
+              >
+                <span className="inline-flex items-center gap-1.5">
+                  Learn more <Arrow className="h-3.5 w-3.5" />
                 </span>
               </div>
-
-              <div className="pointer-events-none absolute inset-x-7 -bottom-px h-px bg-gradient-to-r from-transparent via-[#c97a3a]/60 to-transparent opacity-0 group-hover:opacity-100 transition" />
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </div>
+
+      <Dialog open={!!selectedMod} onOpenChange={(open) => !open && setSelectedMod(null)}>
+        <DialogContent className="w-[calc(100%-2.5rem)] max-w-md bg-[#efeadd] border border-[#1a1a1a]/12 rounded-3xl p-6 sm:p-10 shadow-2xl text-[#161616] [&>button]:text-[#1a1a1a] [&>button]:hover:bg-[#1a1a1a]/10 [&>button]:focus:outline-none [&>button]:focus:ring-0 [&>button]:right-6 [&>button]:top-6 [&>button]:p-1 [&>button]:rounded-full">
+          {selectedMod && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#2a2a2a]/45 mb-2">
+                  <span className={`rounded px-1.5 py-0.5 text-[8.5px] uppercase tracking-wider ${TAG_COLOR[selectedMod.tag]}`}>
+                    {selectedMod.tag}
+                  </span>
+                </div>
+                <DialogTitle className="mt-2 font-display text-[22px] font-bold leading-tight">
+                  {selectedMod.name}
+                </DialogTitle>
+                <DialogDescription className="mt-3 text-[14.5px] leading-relaxed text-[#2a2a2a]/75">
+                  {selectedMod.desc}
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="mt-6 border-t border-[#1a1a1a]/10 pt-6">
+                <h4 className="text-[11px] font-mono uppercase tracking-wider text-[#2a2a2a]/55 mb-4">Key Features</h4>
+                <ul className="space-y-3.5">
+                  {selectedMod.details.map((detail, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="text-[#c97a3a] font-bold text-[15px] mt-0.5 leading-none">→</span>
+                      <span className="text-[14px] leading-snug text-[#2a2a2a]/85">{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </SectionBg>
   );
 }

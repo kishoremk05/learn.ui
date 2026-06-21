@@ -37,31 +37,33 @@ export function HowItWorks() {
           </Reveal>
         </div>
 
-        {/* 4-Column Process Timeline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4-Column Process Timeline Grid in Pattern 1 */}
+        <Reveal delay={200} className="mt-14 rounded-3xl border border-white bg-white overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px">
           {STEPS.map((s, i) => (
-            <Reveal
+            <div
               key={s.title}
-              delay={i * 80}
-              className="relative bg-[#efeadd]/65 border border-[#1a1a1a]/10 rounded-3xl p-7 hover:bg-[#efeadd] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between"
+              className="bg-[#efeadd]/65 hover:bg-[#efeadd]/85 p-8 sm:p-10 flex flex-col justify-between transition-colors duration-300 min-h-[260px]"
             >
               <div>
-                <div className="text-[11px] font-mono tracking-widest text-[#c97a3a] uppercase font-bold">
-                  Phase {String(i + 1).padStart(2, "0")}
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#2a2a2a]/45">
+                  <span>{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[#c97a3a] uppercase font-bold tracking-wider text-[9px]">
+                    Phase {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <h3 className="mt-4 font-display text-[18px] font-bold text-[#161616] leading-tight">
+                <h3 className="mt-6 font-display text-[19px] sm:text-[20px] font-bold text-[#161616] leading-tight">
                   {s.title}
                 </h3>
-                <p className="mt-3 text-[14px] text-[#2a2a2a]/80 leading-relaxed">
+                <p className="mt-3 text-[14px] leading-[1.65] text-[#2a2a2a]/75">
                   {s.desc}
                 </p>
               </div>
               <div className="mt-6 pt-3 border-t border-[#1a1a1a]/6 text-[10px] font-mono text-[#2a2a2a]/45">
                 Calculated automatically
               </div>
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </Reveal>
 
       </div>
     </SectionBg>

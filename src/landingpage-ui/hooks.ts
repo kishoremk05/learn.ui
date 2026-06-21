@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useReveal<T extends HTMLElement>(threshold = 0.12) {
+export function useReveal<T extends HTMLElement>(threshold = 0.02) {
   const ref = useRef<T | null>(null);
   useEffect(() => {
     const el = ref.current;
@@ -26,8 +26,10 @@ export function useReveal<T extends HTMLElement>(threshold = 0.12) {
 export function useScrolledPast(offset?: number) {
   const [past, setPast] = useState(false);
   useEffect(() => {
-    const compute = () =>
-      setPast(window.scrollY > (offset ?? window.innerHeight - 80));
+    const compute = () => {
+      const scrollY = window.scrollY ?? window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop ?? 0;
+      setPast(scrollY > (offset ?? window.innerHeight - 80));
+    };
     compute();
     window.addEventListener("scroll", compute, { passive: true });
     window.addEventListener("resize", compute);
