@@ -4,16 +4,16 @@ import { LandingPage } from "@/landingpage-ui/LandingPage";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Studiqs — AI-Powered Student Intelligence & School ERP" },
+      { title: "Studiqs — Academic Intelligence Platform for Schools" },
       {
         name: "description",
         content:
-          "Run your entire school from one intelligent platform — admissions, academics, attendance, fees, transport and analytics, supporting CBSE, IB, and international standards.",
+          "An Academic Intelligence Platform that connects school data, topic gap analysis, AI recommendations, parent engagement, and management foresight into one decision layer. CBSE Ready.",
       },
-      { property: "og:title", content: "Studiqs — AI-Powered School ERP" },
+      { property: "og:title", content: "Studiqs — Academic Intelligence Platform" },
       {
         property: "og:description",
-        content: "One platform. Complete control. Better outcomes.",
+        content: "Transform school data into academic intelligence. Get topic gap analysis, CBSE board readiness, and role-based dashboards.",
       },
     ],
   }),

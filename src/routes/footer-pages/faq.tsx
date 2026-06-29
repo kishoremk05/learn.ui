@@ -7,24 +7,24 @@ export const Route = createFileRoute("/footer-pages/faq")({
 
 const FAQS = [
   {
-    q: "How long does it take to migrate from our old ERP system?",
-    a: "Standard onboarding and data migration takes 2 to 4 weeks. Our customer success team handles the data mapping and uploads student records, timetables, and historical marks directly so your staff doesn't have to.",
+    q: "Does Studiqs replace our current School ERP system?",
+    a: "No. Studiqs is an Academic Intelligence Platform that sits on top of your existing systems. You don't need to replace your current ERP or LMS. You simply export your student marks sheets or reports and upload them to Studiqs to generate insights.",
   },
   {
     q: "Which boards and syllabuses does Studiqs support?",
-    a: "Studiqs is fully syllabus-aligned and supports international and national boards including CBSE, IB (International Baccalaureate), British (GCSE/A-Levels), and Ministry of Education curricula, adapting easily to custom grading systems.",
+    a: "Studiqs is fully optimized for CBSE standards and Board exam readiness predictions, while also supporting custom international school grading systems.",
+  },
+  {
+    q: "How does Studiqs get our school data?",
+    a: "Getting started is extremely simple and requires no API integrations. You simply export standard reports or marks sheets from your existing ERP/LMS and drag-and-drop them into the Studiqs upload interface.",
   },
   {
     q: "Where is our student data hosted?",
-    a: "We host data on secure, locally compliant cloud servers (including regional hosting centers and global clouds) to comply with local residency laws and institutional privacy guidelines.",
-  },
-  {
-    q: "Can we use only specific modules (like SIS and AI Analytics)?",
-    a: "Yes. Studiqs is modular. You can use our SIS and AI Analytics components while keeping your existing billing or payroll systems, integrating them via secure APIs.",
+    a: "We host data on secure, locally compliant cloud servers (including regional hosting centers and global clouds) to comply with local residency laws and institutional privacy guidelines in both India and the UAE.",
   },
   {
     q: "How do parents access the student dashboard?",
-    a: "Parents receive a secure onboarding email or SMS containing unique login links. They can download the Studiqs Parent App or log in via browser to see child performance tracking.",
+    a: "Parents receive a secure onboarding email or SMS containing a unique login link. They can log in via browser on any device to view their child's topic gaps and learning progress.",
   },
 ];
 

@@ -6,112 +6,80 @@ type Mod = { name: string; desc: string; tag: string; details: string[] };
 
 const MODS: Mod[] = [
   { 
-    name: "Admissions & Enrollment", 
-    desc: "Digital applications, document verification, and automated approvals.", 
-    tag: "Operations",
+    name: "Early Years", 
+    desc: "Developmental milestone tracking, language readiness scores, and foundational learning indicators.", 
+    tag: "LKG – UKG",
     details: [
-      "Customizable registration & enrollment forms",
-      "Secure digital document upload & verification",
-      "Automated evaluation workflows with conditional approvals",
-      "Instant email and SMS notification updates to parents"
+      "Early Learning Readiness Index (ELRI) tracking",
+      "Speech & motor skill development monitoring",
+      "Attendance impact on early socialization",
+      "Parent milestone alerts & guidance tips"
     ]
   },
   { 
-    name: "Student Information System", 
-    desc: "One profile per student. Lifetime history.", 
-    tag: "Operations",
+    name: "Primary School", 
+    desc: "Numeracy and literacy gap analysis, subject-wise performance trends, and habit formation tracking.", 
+    tag: "Class 1 – 5",
     details: [
-      "Unified academic, attendance & behavioral logs",
-      "Integrated extracurricular achievements & portfolio builders",
-      "Sibling & family relationships linkage",
-      "Confidential health reports and custom support plans"
+      "Foundational literacy & numeracy tracking",
+      "Daily reading and spelling progress curves",
+      "Homework compliance & study habit analytics",
+      "Personalized learning readiness indicators"
     ]
   },
   { 
-    name: "Academic Planning", 
-    desc: "Subjects, terms, timetables, syllabi.", 
-    tag: "Academics",
+    name: "Middle School", 
+    desc: "Deep topic gap detection across core subjects, multi-subject average curves, and teacher alert systems.", 
+    tag: "Class 6 – 9",
     details: [
-      "Multi-term scheduling matrix builders",
-      "Conflict-free automatic room & teacher allocation",
-      "Syllabus distribution trackers & progress audits",
-      "Co-teacher assignments and substitution management"
+      "Topic-level gap detection (Mathematics, Science, English)",
+      "Multi-subject average performance trajectories",
+      "Subject-wise strength & weakness mapping",
+      "Automated teacher intervention alerts"
     ]
   },
   { 
-    name: "Examination Management", 
-    desc: "Schedules, grading, scorecards, analytics.", 
-    tag: "Academics",
+    name: "Secondary School", 
+    desc: "CBSE Board Exam readiness predictions, mock score analysis, and active at-risk student alerts.", 
+    tag: "Class 10",
     details: [
-      "Flexible grading systems (GPA, CBSE, IB, custom matrices)",
-      "Automated report card compilation & digital distribution",
-      "Exam timetable generators & seating arrangement logs",
-      "Cohort performance analytics and grade curve adjustments"
+      "CBSE Board Exam score predictions with high confidence intervals",
+      "Detailed mock exam performance & confidence level analysis",
+      "Weak-topic concept diagnostic logs",
+      "Active risk identification and revision recommendation guides"
     ]
   },
   { 
-    name: "HR & Payroll", 
-    desc: "Staff records, leaves, salaries, compliance.", 
-    tag: "Finance",
+    name: "Senior Secondary", 
+    desc: "Stream-specific diagnostics, university preparation indexes, and career readiness scoring.", 
+    tag: "Class 11 – 12",
     details: [
-      "Staff profiles, credentials & contract management",
-      "Interactive leave application and validation dashboard",
-      "Salary structures with allowance/deduction configuration",
-      "Statutory compliance reporting & payslip printing"
+      "Subject stream diagnostic analytics",
+      "Career interest index alignment tool",
+      "Advanced assessment & mock exam diagnostics",
+      "University and higher education readiness reports"
     ]
   },
   { 
-    name: "Parent Mobile App", 
-    desc: "Attendance, fees, homework, circulars.", 
-    tag: "Engagement",
+    name: "College Admissions", 
+    desc: "Predict university cutoffs, target stream matching, and custom score improvement plans based on past results.", 
+    tag: "Higher Ed",
     details: [
-      "Real-time attendance alerts and check-in push notifications",
-      "Direct homework feedback loops and submission trackers",
-      "Integrated online fee payment gateways (AED native)",
-      "Official school circulars & classroom announcement board"
-    ]
-  },
-  { 
-    name: "Teacher Portal", 
-    desc: "Lessons, attendance, grades, comms.", 
-    tag: "Engagement",
-    details: [
-      "Fast digital attendance rosters with batch updates",
-      "Instant gradebook input & mark verification channels",
-      "Collaborative lesson planning template repository",
-      "Teacher-parent messaging center with translate features"
-    ]
-  },
-  { 
-    name: "Principal Dashboard", 
-    desc: "Live KPIs across the entire campus.", 
-    tag: "Leadership",
-    details: [
-      "Real-time enrollment, retention, and capacity figures",
-      "Income vs expense sheets & outstanding fee summaries",
-      "School-wide academic quality and cohort success curves",
-      "Staff utilization ratios & schedule compliance checks"
-    ]
-  },
-  { 
-    name: "Multi-Campus Management", 
-    desc: "Run several schools from one console.", 
-    tag: "Leadership",
-    details: [
-      "Single sign-on master control panel for multiple campuses",
-      "Branch-by-branch operational comparisons",
-      "Consolidated financial and tax statements",
-      "Global curriculum templates and assessment alignments"
+      "AI-driven cutoff prediction for top universities",
+      "Gap analysis to hit target college cutoff scores",
+      "Course-specific stream matching and recommendations",
+      "Detailed score improvement path tracking"
     ]
   },
 ];
 
 const TAG_COLOR: Record<string, string> = {
-  Operations: "bg-[#1a1a1a]/8 text-[#1a1a1a]",
-  Academics: "bg-[#c97a3a]/15 text-[#a8632a]",
-  Finance: "bg-[#3a6b4a]/12 text-[#2f5b3e]",
-  Engagement: "bg-[#3e5db0]/12 text-[#3a4d8f]",
-  Leadership: "bg-[#7a4ea1]/12 text-[#5e3c80]",
+  "LKG – UKG": "bg-[#7a4ea1]/12 text-[#5e3c80]",
+  "Class 1 – 5": "bg-[#3e5db0]/12 text-[#3a4d8f]",
+  "Class 6 – 9": "bg-[#3a6b4a]/12 text-[#2f5b3e]",
+  "Class 10": "bg-[#c97a3a]/15 text-[#a8632a]",
+  "Class 11 – 12": "bg-[#1a1a1a]/8 text-[#1a1a1a]",
+  "Higher Ed": "bg-[#e05252]/12 text-[#a83434]",
 };
 
 export function Modules() {
@@ -122,16 +90,15 @@ export function Modules() {
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-7">
-            <SectionHeading kicker="Modules">
-              Powerful modules.
+            <SectionHeading kicker="Class Coverage">
+              From LKG to Class 12.
               <br />
-              One platform.
+              Complete academic intelligence.
             </SectionHeading>
           </div>
           <Reveal delay={150} className="lg:col-span-5">
             <p className="text-[15.5px] leading-[1.7] text-[#2a2a2a]/85 max-w-[440px] lg:ml-auto">
-              Each module works on its own and shines together. Mix what your
-              school needs today, expand whenever you're ready.
+              From early years developmental milestones to secondary board exam prep and stream selection, Studiqs tracks growth across every stage.
             </p>
           </Reveal>
         </div>

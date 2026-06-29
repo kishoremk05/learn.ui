@@ -27,8 +27,8 @@ export function PeopleSection() {
       accentBg: "bg-[#c97a3a]/8",
       features: [
         "Track subject-wise average grades and performance history",
-        "View customized revision recommendations",
-        "Access digital achievement portfolios and credentials",
+        "View personal topic-level gaps and revision targets",
+        "Access mock test performance and board exam preparation checklists",
       ],
       mockup: () => (
         <div className="bg-white/60 border border-[#1a1a1a]/8 rounded-2xl p-5 flex flex-col justify-between h-full shadow-sm">
@@ -68,9 +68,9 @@ export function PeopleSection() {
       color: "#3e5db0",
       accentBg: "bg-[#3e5db0]/8",
       features: [
-        "Monitor daily attendance logs and class participations",
-        "Receive alerts on learning gaps and recommended actions",
-        "Direct communications channel with course teachers",
+        "Track weekly progress and topic gaps without report card surprises",
+        "Receive proactive notifications when critical topics require focus",
+        "Access actionable, data-tied tips for supporting study at home",
       ],
       mockup: () => (
         <div className="bg-white/60 border border-[#1a1a1a]/8 rounded-2xl p-5 flex flex-col justify-between h-full shadow-sm">
@@ -106,9 +106,9 @@ export function PeopleSection() {
       color: "#3a6b4a",
       accentBg: "bg-[#3a6b4a]/8",
       features: [
-        "View automated classroom average trends and outliers",
-        "Identify specific students who require immediate attention",
-        "Auto-generate curriculum intervention guides",
+        "View class-wide topic gaps and academic average curves",
+        "Identify specific at-risk students sliding in mock tests immediately",
+        "Auto-generate class revision lists and target guidelines",
       ],
       mockup: () => (
         <div className="bg-white/60 border border-[#1a1a1a]/8 rounded-2xl p-5 flex flex-col justify-between h-full shadow-sm">
@@ -141,16 +141,16 @@ export function PeopleSection() {
       ),
     },
     management: {
-      label: "School Management",
+      label: "Management",
       roleTitle: "Institutional Academic Intelligence",
       kicker: "Data-Backed Decision Making",
-      desc: "Monitor school-wide academic indicators, risks, and enrollment indices from one unified leadership console.",
+      desc: "Monitor school-wide academic indicators, board readiness curves, and cohort risk flags from one unified leadership console.",
       color: "#7a4ea1",
       accentBg: "bg-[#7a4ea1]/8",
       features: [
-        "Aggregate multiple campuses and report macro trends",
-        "Analyze admission pipelines and enrollment statistics",
-        "Monitor parent satisfaction metrics and communication logs",
+        "Aggregate school-wide performance curves and report macro trends",
+        "Analyze CBSE board readiness curves and cohort risk groups",
+        "Monitor class-level topic gaps and intervention resolutions",
       ],
       mockup: () => (
         <div className="bg-white/60 border border-[#1a1a1a]/8 rounded-2xl p-5 flex flex-col justify-between h-full shadow-sm">
@@ -181,13 +181,13 @@ export function PeopleSection() {
   };
 
   return (
-    <SectionBg id="stakeholders" className="py-24 sm:py-28 border-t border-[#1a1a1a]/10">
+    <SectionBg id="dashboards" className="py-24 sm:py-28 border-t border-[#1a1a1a]/10">
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10">
         
         {/* Centered Heading */}
         <div className="text-center max-w-[800px] mx-auto mb-14">
-          <SectionHeading kicker="Designed for Everyone" align="center">
-            Built for every stakeholder.
+          <SectionHeading kicker="Role-Based Dashboards" align="center">
+            Four Dashboards. One Platform.
           </SectionHeading>
           
           <Reveal delay={120}>

@@ -1,15 +1,11 @@
 import { Navbar } from "./Navbar";
 import { Hero } from "./Hero";
-import { About } from "./About";
-import { Problem } from "./Problem";
 import { HowItWorks } from "./HowItWorks";
-import { Features } from "./Features";
-import { Modules } from "./Modules";
 import { StudentPortfolio } from "./StudentPortfolio";
-import { AIIntelligence } from "./AIIntelligence";
 import { PeopleSection } from "./PeopleSection";
+import { AIIntelligence } from "./AIIntelligence";
+import { Modules } from "./Modules";
 import { WhyStudiqs } from "./WhyStudiqs";
-import { FutureVision } from "./FutureVision";
 import { Testimonials } from "./Testimonials";
 import { FinalCTA } from "./FinalCTA";
 import { Footer } from "./Footer";
@@ -19,16 +15,12 @@ export function LandingPage() {
     <main className="min-h-screen bg-[#e9e2d4] text-[#161616]">
       <Navbar />
       <Hero />
-      <About />
-      <PeopleSection />
       <HowItWorks />
       <StudentPortfolio />
-      <Features />
-      <Modules />
+      <PeopleSection />
       <AIIntelligence />
-      <Problem />
+      <Modules />
       <WhyStudiqs />
-      <FutureVision />
       <Testimonials />
       <FinalCTA />
       <Footer />

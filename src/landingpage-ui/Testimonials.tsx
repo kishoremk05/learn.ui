@@ -1,9 +1,9 @@
 import { Reveal, SectionBg, SectionHeading } from "./atoms";
 
 const LIST = [
-  { q: "Studiqs reduced our administrative workload significantly while improving communication with parents.", a: "School Principal" },
-  { q: "Admissions and fee management became effortless after implementation.", a: "School Administrator" },
-  { q: "Teachers now spend more time teaching and less time on paperwork.", a: "Academic Coordinator" },
+  { q: "For the first time, we could see exactly which topics our students were weak in — before the board exam.", a: "School Principal, CBSE School" },
+  { q: "Parents stopped panicking at report card time. Studiqs gave them weekly visibility all term long.", a: "Academic Coordinator" },
+  { q: "Our teachers now spend time on targeted interventions instead of guessing which students need help.", a: "Head of Academics" },
 ];
 
 export function Testimonials() {

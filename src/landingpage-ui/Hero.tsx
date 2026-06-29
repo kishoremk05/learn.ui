@@ -1,4 +1,4 @@
-import heroBg from "../assets/hero_bg.png";
+import heroBg from "../assets/hero bg 3.png";
 import { Arrow } from "./atoms";
 
 const HERO_BG = heroBg;
@@ -41,7 +41,7 @@ function LiveDashboard() {
             S
           </div>
           <span className="text-[11px] font-semibold" style={{ color: "#111" }}>
-            Studiqs Analytics
+            Studiqs — Student Dashboard
           </span>
         </div>
         <div className="flex items-center gap-1.5">
@@ -208,7 +208,7 @@ function LiveDashboard() {
           <span style={{ color: "#c97a3a", fontSize: 10 }}>◎</span>
         </div>
         <p className="text-[8.5px] leading-[1.55]" style={{ color: "#555" }}>
-          <strong style={{ color: "#111" }}>NOVA Insight:</strong> Focus Mathematics & Science for Grade 8. Address foundational skills — projected improvement of 15–20%.
+          <strong style={{ color: "#111" }}>Studiqs AI Insight:</strong> Math & Science concepts in electromagnetic induction and quadratic equations require immediate focus. Target diagnostic quiz for rapid improvement.
         </p>
       </div>
     </div>
@@ -225,13 +225,13 @@ export function Hero() {
       <div className="hidden lg:block relative w-full min-h-screen max-h-[1100px] overflow-hidden">
         {/* BG image layer */}
         <div
-          className="absolute right-[-31px] pointer-events-none select-none overflow-hidden"
+          className="absolute right-0 pointer-events-none select-none overflow-hidden"
           style={{
-            top: "calc(50% + 20px)",
-            transform: "translateY(-50%) scaleX(0.95) scaleY(0.95)",
+            top: "calc(50% + 55px)",
+            transform: "translateY(-50%) scale(0.93)",
             transformOrigin: "right center",
-            width: "max(100%, calc(90vh * 1.8989))",
-            height: "max(90%, calc(100vw / 1.8989))",
+            width: "calc(100vh * 1.7421)",
+            height: "100vh",
           }}
         >
           <div
@@ -246,16 +246,16 @@ export function Hero() {
           {/* AI Insight callout over the bg image */}
           <div
             className="absolute animate-fade-up z-10"
-            style={{ animationDelay: "560ms", top: "17.5%", left: "36%", width: "19%" }}
+            style={{ animationDelay: "560ms", top: "6.5%", left: "24.5%", width: "24%" }}
           >
-            <div className="text-[9px] font-mono tracking-[0.24em] uppercase" style={{ color: "rgba(42,42,42,0.7)" }}>
-              AI Insight
+            <div className="text-[9.5px] font-mono font-semibold tracking-[0.24em] uppercase" style={{ color: "#000000" }}>
+              Studiqs AI
             </div>
-            <h3 className="mt-2 font-display text-[14px] xl:text-[15px] leading-[1.2] font-medium" style={{ color: "#161616" }}>
-              Every student.<br />Every moment.<br />Every outcome.
+            <h3 className="mt-2 font-display text-[14px] xl:text-[15px] leading-[1.2] font-semibold" style={{ color: "#000000" }}>
+              Academic Intelligence.<br />Proactive Guidance.<br />Real Results.
             </h3>
-            <p className="mt-3 text-[10px] leading-[1.5]" style={{ color: "rgba(42,42,42,0.8)" }}>
-              NOVA analyzes performance across subjects to identify gaps and improve outcomes.
+            <p className="mt-3 text-[10px] leading-[1.5]" style={{ color: "#000000" }}>
+              Studiqs AI analyzes topic gaps, board readiness, and student trajectories in real time.
             </p>
           </div>
         </div>
@@ -264,7 +264,7 @@ export function Hero() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "linear-gradient(to right, rgba(233,226,212,0.95) 0%, rgba(233,226,212,0.7) 38%, rgba(233,226,212,0.15) 60%, transparent 75%)",
+            background: "linear-gradient(to right, rgba(233,226,212,0.95) 0%, rgba(233,226,212,0.75) 40%, rgba(233,226,212,0.2) 62%, transparent 85%)",
           }}
         />
 
@@ -277,10 +277,10 @@ export function Hero() {
               className="font-display tracking-tight leading-[1.08] text-[38px] xl:text-[48px] max-w-[500px] animate-fade-up"
               style={{ color: "#161616", animationDelay: "60ms" }}
             >
-              <span className="block" style={{ animationDelay: "80ms" }}>Transform Academic</span>
+              <span className="block" style={{ animationDelay: "80ms" }}>Transform School</span>
               <span className="block" style={{ animationDelay: "160ms" }}>
-                Data Into Student{" "}
-                <span style={{ color: "#c97a3a" }}>Success*</span>
+                Data Into Academic{" "}
+                <span style={{ color: "#c97a3a" }}>Intelligence*</span>
               </span>
             </h1>
 
@@ -288,7 +288,7 @@ export function Hero() {
               className="mt-6 max-w-[440px] text-[15px] leading-[1.6] font-medium animate-fade-up"
               style={{ color: "rgba(42,42,42,0.78)", animationDelay: "260ms" }}
             >
-              An AI-driven Student Intelligence and Performance Analytics Platform that helps schools identify learning gaps, track progress, and empower teachers and parents with role-based dashboards.
+              Studiqs helps schools identify topic gaps, academic risks, student readiness, parent engagement insights, and management intelligence through role-based dashboards.
             </p>
 
             <div
@@ -364,7 +364,7 @@ export function Hero() {
           }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#f0b352]" />
-          AI-Powered · Student Intelligence
+          Academic Intelligence Platform
         </div>
 
         <h1
@@ -375,17 +375,17 @@ export function Hero() {
             animationDelay: "100ms",
           }}
         >
-          Transform Academic
+          Transform School
           <br />
-          Data Into Student{" "}
-          <span style={{ color: "#e8a73a" }}>Success*</span>
+          Data Into Academic{" "}
+          <span style={{ color: "#e8a73a" }}>Intelligence*</span>
         </h1>
 
         <p
           className="mt-4 text-[13px] leading-[1.65] animate-fade-up"
           style={{ color: "rgba(239,234,221,0.6)", animationDelay: "200ms" }}
         >
-          An AI platform that helps schools identify learning gaps, track progress, and empower teachers &amp; parents with role-based dashboards.
+          Studiqs helps schools identify topic gaps, academic risks, student readiness, parent engagement insights, and management intelligence through role-based dashboards.
         </p>
 
         {/* CTAs */}

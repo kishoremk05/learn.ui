@@ -21,9 +21,12 @@ function AboutPage() {
           We envision a school community where data is no longer locked inside dusty database columns. By aggregating multiple performance touchpoints — class assignments, board preparation tests, physical and sports records, and behavioral indicators — we give school leaders, parents, and teachers a 360-degree, unified view of each student.
         </p>
 
-        <h3 className="font-display text-[22px] font-bold text-[#161616] mt-8">Syllabus-Aligned Intelligence</h3>
+        <h3 className="font-display text-[22px] font-bold text-[#161616] mt-8">CBSE-Aligned Academic Intelligence</h3>
         <p>
-          Unlike generic administration software, Studiqs is custom-aligned to international syllabuses. Whether your school follows the CBSE, International Baccalaureate (IB), British National Curriculum, or local Ministry standards, our analytics and gap detection modules map directly to your curriculum's specific learning objectives and grading structures.
+          Unlike generic administration software, Studiqs is custom-aligned to academic curricula. Whether your school follows the CBSE or custom international grading standards, our analytics and gap detection modules map directly to your curriculum's specific learning objectives and grading structures.
+        </p>
+        <p>
+          Studiqs is actively serving schools across India and expanding into GCC countries, beginning with the UAE — where data-driven education is rapidly becoming the new standard.
         </p>
 
         <div className="border border-[#1a1a1a]/8 rounded-2xl bg-white p-6 shadow-sm mt-8">

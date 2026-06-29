@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useScrolledPast } from "./hooks";
 
-const LINKS = ["About", "Stakeholders", "Platform", "Problem", "Why Studiqs", "Future"];
+const LINKS = ["How It Works", "Dashboards", "Studiqs AI", "Why Studiqs"];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -10,7 +10,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const darkSectionIds = ["hero-dark-band", "future", "contact"];
+      const darkSectionIds = ["hero-dark-band", "contact"];
       let overDark = false;
 
       for (const id of darkSectionIds) {
@@ -144,7 +144,7 @@ export function Navbar() {
             </a>
           </div>
           <div className="mt-auto text-[10px] font-mono text-[#f0b352]/50 uppercase tracking-widest">
-            CBSE • IB • Cambridge • International
+            CBSE Ready • India & GCC
           </div>
         </div>
       )}

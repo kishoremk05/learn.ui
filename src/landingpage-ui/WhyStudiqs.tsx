@@ -1,19 +1,18 @@
 import { Reveal, SectionBg, SectionHeading } from "./atoms";
 
 const ERP_POINTS = [
-  "Administrative focus",
-  "Limited academic intelligence",
-  "Static reporting",
-  "Reactive decision making",
+  "Administrative & billing focus",
+  "Complex database migrations required",
+  "No topic gap analytics or predictive insights",
+  "Parents only see final report card results",
 ];
 
 const STUDIQS_POINTS = [
-  "AI-powered academic intelligence",
-  "Predictive insights",
-  "Student-centric analytics",
-  "Early risk detection",
-  "Personalized recommendations",
-  "Data-driven intervention planning",
+  "No ERP Replacement required (works with any system)",
+  "Easy Data Import (drag-and-drop spreadsheets)",
+  "CBSE Ready (board readiness predictions & CBSE mapping)",
+  "AI Insights (automatic topic gap and at-risk alerts)",
+  "Stakeholder Dashboards (student, parent, teacher, management)",
 ];
 
 export function WhyStudiqs() {
@@ -23,15 +22,15 @@ export function WhyStudiqs() {
         
         {/* Centered Heading */}
         <div className="text-center max-w-[800px] mx-auto mb-14">
-          <SectionHeading kicker="Why Studiqs" align="center">
-            Designed for student growth,
+          <SectionHeading kicker="Why Schools Choose Studiqs" align="center">
+            Built for intelligence.
             <br />
-            not just administration.
+            Not just administration.
           </SectionHeading>
 
           <Reveal delay={120}>
             <p className="mt-6 text-[16px] sm:text-[17px] leading-[1.7] text-[#2a2a2a]/85 font-medium">
-              While traditional school ERPs keep the lights on, Studiqs drives academic excellence. See how we compare to traditional school software:
+              Studiqs sits on top of your existing setup to drive academic excellence. See how we compare to traditional school software:
             </p>
           </Reveal>
         </div>

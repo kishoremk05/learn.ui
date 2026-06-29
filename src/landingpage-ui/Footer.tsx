@@ -26,7 +26,7 @@ export function Footer() {
             <span>Role-Based Intelligence</span>
           </div>
           <p className="mt-6 text-[12px] font-mono text-[#efeadd]/50 uppercase tracking-wider">
-            CBSE • IB • Cambridge • International Syllabuses
+            CBSE Ready • India & GCC Countries
           </p>
           <a
             href="mailto:hello@studiqs.com"
@@ -34,6 +34,9 @@ export function Footer() {
           >
             hello@studiqs.com
           </a>
+          <p className="mt-3 text-[12px] text-[#efeadd]/60 italic font-medium">
+            Serving schools across India and GCC countries, beginning with UAE.
+          </p>
         </div>
         {COLS.map((c) => (
           <div key={c.h}>

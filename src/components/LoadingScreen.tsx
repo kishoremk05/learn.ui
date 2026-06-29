@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // Import local images so Vite resolves their build paths
 import portfolioBg from "../assets/why nova section 2 or 3.png";
-import heroBg from "../assets/hero_bg.png";
+import heroBg from "../assets/hero bg 3.png";
 import siteBg from "../assets/website_bg.png";
 import heroUi from "../assets/hero section ui.png";
+import bgLogo from "../assets/bg.png";
 
-const IMAGES_TO_PRELOAD = [portfolioBg, heroBg, siteBg, heroUi];
+const IMAGES_TO_PRELOAD = [portfolioBg, heroBg, siteBg, heroUi, bgLogo];
 const WORDS = ["Academics", "Intelligence", "Growth"];
 
 interface LoadingScreenProps {
@@ -18,6 +19,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [progress, setProgress] = useState(0);
   const [wordIndex, setWordIndex] = useState(0);
   const [loadedCount, setLoadedCount] = useState(0);
+  const [showReveal, setShowReveal] = useState(false);
 
   const loadedCountRef = useRef(0);
   const onCompleteRef = useRef(onComplete);
@@ -105,10 +107,11 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
       if (nextProgress < 100) {
         frameId = requestAnimationFrame(step);
       } else {
-        // Delay 400ms after reaching 100% progress before completing
+        // Show our logo reveal first
+        setShowReveal(true);
         const timer = setTimeout(() => {
           onCompleteRef.current();
-        }, 400);
+        }, 2200);
         return () => clearTimeout(timer);
       }
     };
@@ -126,56 +129,91 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
     >
-      {/* Element 1: "Studiqs" Label (Top-Left) */}
-      <motion.div
-        className="absolute top-8 left-8 md:top-12 md:left-12 text-xs md:text-sm text-muted uppercase tracking-[0.3em] font-medium"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
-        Studiqs
-      </motion.div>
-
-      {/* Element 2: Rotating Words (Center) */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={wordIndex}
-            className="text-4xl md:text-6xl lg:text-7xl font-display italic text-text/80 font-normal"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+      <AnimatePresence mode="wait">
+        {!showReveal ? (
+          <motion.div
+            key="loading-state"
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="absolute inset-0"
           >
-            {WORDS[wordIndex]}
-          </motion.span>
-        </AnimatePresence>
-      </div>
+            {/* Element 1: "Studiqs" Label (Top-Left) */}
+            <motion.div
+              className="absolute top-8 left-8 md:top-12 md:left-12 text-xs md:text-sm text-muted uppercase tracking-[0.3em] font-medium"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              Studiqs
+            </motion.div>
 
-      {/* Element 3: Counter (Bottom-Right) */}
-      <motion.div
-        className="absolute bottom-8 right-8 md:bottom-12 md:right-12 text-6xl md:text-8xl lg:text-9xl font-display text-text tabular-nums font-normal"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
-        {Math.round(progress).toString().padStart(3, "0")}
-      </motion.div>
+            {/* Element 2: Rotating Words (Center) */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={wordIndex}
+                  className="text-4xl md:text-6xl lg:text-7xl font-display italic text-text/80 font-normal"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                >
+                  {WORDS[wordIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </div>
 
-      {/* Element 4: Progress Bar (Bottom Edge) */}
-      <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-stroke/50">
-        <motion.div
-          className="h-full origin-left"
-          style={{
-            background: "linear-gradient(90deg, #89AACC 0%, #4E85BF 100%)",
-            boxShadow: "0 0 8px rgba(137, 170, 204, 0.35)",
-            width: "100%",
-          }}
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: progress / 100 }}
-          transition={{ duration: 0.1, ease: "linear" }}
-        />
-      </div>
+            {/* Element 3: Counter (Bottom-Right) */}
+            <motion.div
+              className="absolute bottom-8 right-8 md:bottom-12 md:right-12 text-6xl md:text-8xl lg:text-9xl font-display text-text tabular-nums font-normal"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              {Math.round(progress).toString().padStart(3, "0")}
+            </motion.div>
+
+            {/* Element 4: Progress Bar (Bottom Edge) */}
+            <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-stroke/50">
+              <motion.div
+                className="h-full origin-left"
+                style={{
+                  background: "linear-gradient(90deg, #89AACC 0%, #4E85BF 100%)",
+                  boxShadow: "0 0 8px rgba(137, 170, 204, 0.35)",
+                  width: "100%",
+                }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: progress / 100 }}
+                transition={{ duration: 0.1, ease: "linear" }}
+              />
+            </div>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="reveal-state"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="absolute inset-0 flex items-center justify-center bg-bg"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="flex flex-col items-center text-center p-6"
+            >
+              <motion.img 
+                src={bgLogo} 
+                alt="Studiqs Logo" 
+                className="w-40 md:w-52 h-auto"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }

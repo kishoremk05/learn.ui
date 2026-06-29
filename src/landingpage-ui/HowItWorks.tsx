@@ -2,20 +2,20 @@ import { Reveal, SectionBg, SectionHeading } from "./atoms";
 
 const STEPS = [
   {
-    title: "Collect Academic Data",
-    desc: "Schools upload attendance, marks, assessments, achievements, surveys, and academic records through a centralized admin workspace.",
+    title: "Export ERP Data",
+    desc: "Pull standard marks sheets, mock exam scores, or grade reports from your existing school ERP or SIS system.",
   },
   {
-    title: "Generate Intelligence",
-    desc: "AI engines analyze student and institutional data to identify trends, risks, strengths, weaknesses, and growth opportunities.",
+    title: "Upload to Studiqs",
+    desc: "Drag-and-drop the spreadsheet directly into the secure Studiqs dashboard — no API integration or coding required.",
   },
   {
-    title: "Deliver Actionable Insights",
-    desc: "Role-based dashboards present personalized insights for students, parents, teachers, and school leadership.",
+    title: "AI Analyzes",
+    desc: "Studiqs AI instantly processes the marks to identify topic-level gaps, board exam readiness, and at-risk students.",
   },
   {
-    title: "Improve Outcomes",
-    desc: "Schools can take proactive action before academic issues become critical, improving student performance and overall institutional success.",
+    title: "Insights Delivered",
+    desc: "Role-based dashboards for students, parents, teachers, and school leadership are updated with actionable recommendations.",
   },
 ];
 
@@ -27,12 +27,12 @@ export function HowItWorks() {
         {/* Centered Heading */}
         <div className="text-center max-w-[800px] mx-auto mb-14">
           <SectionHeading kicker="How it works" align="center">
-            From raw data to student growth.
+            Simple, non-disruptive deployment.
           </SectionHeading>
           
           <Reveal delay={150}>
             <p className="mt-6 text-[16px] sm:text-[17px] leading-[1.7] text-[#2a2a2a]/85 max-w-[580px] mx-auto">
-              Studiqs runs continuously in the background, transforming daily school records into predictive guidance for every stakeholder.
+              Studiqs sits on top of your existing systems, turning standard spreadsheet exports into real-time academic intelligence.
             </p>
           </Reveal>
         </div>
@@ -48,7 +48,7 @@ export function HowItWorks() {
                 <div className="flex items-center justify-between text-[11px] font-mono text-[#2a2a2a]/45">
                   <span>{String(i + 1).padStart(2, "0")}</span>
                   <span className="text-[#c97a3a] uppercase font-bold tracking-wider text-[9px]">
-                    Phase {String(i + 1).padStart(2, "0")}
+                    Step {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
                 <h3 className="mt-6 font-display text-[19px] sm:text-[20px] font-bold text-[#161616] leading-tight">
@@ -59,7 +59,7 @@ export function HowItWorks() {
                 </p>
               </div>
               <div className="mt-6 pt-3 border-t border-[#1a1a1a]/6 text-[10px] font-mono text-[#2a2a2a]/45">
-                Calculated automatically
+                Instant analysis
               </div>
             </div>
           ))}

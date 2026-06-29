@@ -6,15 +6,13 @@ export const Route = createFileRoute("/footer-pages/modules")({
 });
 
 const MODS = [
-  { name: "Admissions & Enrollment", desc: "Digital applications, document verification, and automated approvals.", tag: "Operations" },
-  { name: "Student Information System", desc: "Unified student profile tracking complete academic and personal history.", tag: "Operations" },
-  { name: "Academic Planning", desc: "Manage subjects, terms, school timetables, and teacher syllabi.", tag: "Academics" },
-  { name: "Examination Management", desc: "Grade setups, exam schedules, automatic scorecards, and progress logs.", tag: "Academics" },
-  { name: "HR & Payroll", desc: "Staff profiles, leave requests, payroll processing, and regulatory compliance.", tag: "Finance" },
-  { name: "Parent Mobile App", desc: "Instant visibility on attendance records, fee dues, homework tasks, and notifications.", tag: "Engagement" },
-  { name: "Teacher Portal", desc: "Manage lesson plans, take attendance, input grades, and directly message parents.", tag: "Engagement" },
-  { name: "Principal Dashboard", desc: "Real-time KPIs showing academics, attendance, and finance records across campus.", tag: "Leadership" },
-  { name: "Multi-Campus Management", desc: "Consolidated dashboard to govern several schools from a single master console.", tag: "Leadership" },
+  { name: "Topic Gap Analytics", desc: "Automated analysis of student mock tests and marks sheets to pinpoint specific weak concepts before exam periods.", tag: "Academics" },
+  { name: "Board Readiness Engine", desc: "AI-driven forecasting tool that uses historical mock exams and term records to predict final Board results.", tag: "Academics" },
+  { name: "Student Dashboard", desc: "Specialized student portal displaying personal topic checklists, strengths, and smart revision targets.", tag: "Dashboards" },
+  { name: "Parent Guidance Portal", desc: "Gives parents complete visibility into student growth trends and provides simple home-learning support tips.", tag: "Dashboards" },
+  { name: "Teacher Intervention Assistant", desc: "Automatically flags at-risk students and generates recommended curriculum revision plans for classrooms.", tag: "Intelligence" },
+  { name: "Management Foresight Console", desc: "Provides high-level school headers and district comparison charts tracking academic quality metrics.", tag: "Leadership" },
+  { name: "Future Readiness Scorer", desc: "Maps learning strengths to career streams and evaluates higher education benchmarks and readiness.", tag: "Future Planning" },
 ];
 
 function ModulesPage() {

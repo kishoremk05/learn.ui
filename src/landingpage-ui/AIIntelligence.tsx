@@ -9,17 +9,17 @@ const INSIGHTS_LIST = [
 
 export function AIIntelligence() {
   return (
-    <SectionBg id="ai-intelligence" variant="solid" className="py-24 sm:py-28 border-t border-[#1a1a1a]/10">
+    <SectionBg id="studiqs-ai" variant="solid" className="py-24 sm:py-28 border-t border-[#1a1a1a]/10">
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10">
         {/* Centered Heading */}
         <div className="text-center max-w-[800px] mx-auto mb-14">
-          <SectionHeading kicker="AI Analytics Suite" align="center">
-            AI-Powered Academic Intelligence
+          <SectionHeading kicker="Studiqs AI" align="center">
+            AI Recommendations. Risk Detection. Performance Predictions.
           </SectionHeading>
           
           <Reveal delay={120}>
             <p className="mt-6 text-[16px] sm:text-[18px] leading-[1.7] text-[#2a2a2a]/85 font-medium">
-              Studiqs moves school operations from retrospective reporting to proactive guidance. Our analytical engine aggregates multiple school touchpoints to forecast performance and flag risks.
+              Studiqs AI moves schools from reactive reporting to proactive intelligence — detecting at-risk students and topic gaps automatically.
             </p>
           </Reveal>
         </div>
