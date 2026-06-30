@@ -22,8 +22,8 @@ function ContactPage() {
             <div className="space-y-4">
               <div>
                 <strong className="text-[#161616] block text-[13px] uppercase font-mono tracking-wider">Email Inquiry</strong>
-                <a href="mailto:hello@studiqs.com" className="text-[#c97a3a] text-[16px] font-semibold hover:underline">
-                  hello@studiqs.com
+                <a href="mailto:contact@studiqs.com" className="text-[#c97a3a] text-[16px] font-semibold hover:underline">
+                  contact@studiqs.com
                 </a>
               </div>
 

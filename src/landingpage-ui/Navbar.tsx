@@ -144,7 +144,7 @@ export function Navbar() {
             </a>
           </div>
           <div className="mt-auto text-[10px] font-mono text-[#f0b352]/50 uppercase tracking-widest">
-            CBSE Ready • India & GCC
+            Matric/Stateboard and CBSE Ready • India & GCC
           </div>
         </div>
       )}

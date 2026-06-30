@@ -40,10 +40,10 @@ const MODS: Mod[] = [
   },
   { 
     name: "Secondary School", 
-    desc: "CBSE Board Exam readiness predictions, mock score analysis, and active at-risk student alerts.", 
+    desc: "Matric/Stateboard and CBSE Board Exam readiness predictions, mock score analysis, and active at-risk student alerts.", 
     tag: "Class 10",
     details: [
-      "CBSE Board Exam score predictions with high confidence intervals",
+      "Matric/Stateboard and CBSE Board Exam score predictions with high confidence intervals",
       "Detailed mock exam performance & confidence level analysis",
       "Weak-topic concept diagnostic logs",
       "Active risk identification and revision recommendation guides"

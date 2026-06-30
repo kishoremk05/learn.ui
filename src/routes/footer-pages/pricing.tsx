@@ -10,9 +10,9 @@ const PLANS = [
     name: "India Institution Plan",
     price: "Custom",
     period: "",
-    desc: "Tailored specifically for schools following the CBSE or national curriculum. Custom pricing based on school enrollment.",
+    desc: "Tailored specifically for schools following the Matric/Stateboard, CBSE or national curriculum. Custom pricing based on school enrollment.",
     features: [
-      "CBSE Board Readiness Predictions",
+      "Matric/Stateboard and CBSE Board Readiness Predictions",
       "Topic-Level Learning Gap Detection",
       "All 4 Role-Based Dashboards (Student, Parent, Teacher, Management)",
       "Studiqs AI Engine Integration",
@@ -26,7 +26,7 @@ const PLANS = [
     period: "",
     desc: "Built for international and private schools in the GCC (beginning with UAE). Bilingual Arabic/English support ready.",
     features: [
-      "CBSE & International Syllabuses Gap Analysis",
+      "Matric/Stateboard, CBSE & International Syllabuses Gap Analysis",
       "Student Performance Predictions",
       "All 4 Role-Based Dashboards (Student, Parent, Teacher, Management)",
       "Studiqs AI Engine Integration & predictions",
@@ -105,7 +105,7 @@ function PricingPage() {
             <span>✓ Institution Invoicing</span>
           </div>
           <div className="pt-2 border-t border-[#1a1a1a]/5">
-            <strong>Looking for multi-school discounts?</strong> Contact hello@studiqs.com for custom group licensing structures.
+            <strong>Looking for multi-school discounts?</strong> Contact contact@studiqs.com for custom group licensing structures.
           </div>
         </div>
       </div>

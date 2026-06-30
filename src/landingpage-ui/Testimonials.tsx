@@ -1,7 +1,7 @@
 import { Reveal, SectionBg, SectionHeading } from "./atoms";
 
 const LIST = [
-  { q: "For the first time, we could see exactly which topics our students were weak in — before the board exam.", a: "School Principal, CBSE School" },
+  { q: "For the first time, we could see exactly which topics our students were weak in — before the board exam.", a: "School Principal, Matric/Stateboard & CBSE School" },
   { q: "Parents stopped panicking at report card time. Studiqs gave them weekly visibility all term long.", a: "Academic Coordinator" },
   { q: "Our teachers now spend time on targeted interventions instead of guessing which students need help.", a: "Head of Academics" },
 ];

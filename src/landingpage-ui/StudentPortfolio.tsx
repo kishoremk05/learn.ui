@@ -11,7 +11,7 @@ const PORTFOLIO_CATEGORIES = [
   {
     num: "02",
     title: "Board Readiness Intelligence™",
-    desc: "CBSE-aligned prediction engine forecasts board exam performance with term-by-term confidence scores.",
+    desc: "Matric/Stateboard and CBSE-aligned prediction engine forecasts board exam performance with term-by-term confidence scores.",
     tagColor: "text-[#3e5db0] bg-[#3e5db0]/8",
   },
   {

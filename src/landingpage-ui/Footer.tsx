@@ -26,13 +26,13 @@ export function Footer() {
             <span>Role-Based Intelligence</span>
           </div>
           <p className="mt-6 text-[12px] font-mono text-[#efeadd]/50 uppercase tracking-wider">
-            CBSE Ready • India & GCC Countries
+            Matric/Stateboard and CBSE Ready • India & GCC Countries
           </p>
           <a
-            href="mailto:hello@studiqs.com"
+            href="mailto:contact@studiqs.com"
             className="mt-2 inline-block text-[14px] underline underline-offset-4 hover:text-[#f0b352] transition"
           >
-            hello@studiqs.com
+            contact@studiqs.com
           </a>
           <p className="mt-3 text-[12px] text-[#efeadd]/60 italic font-medium">
             Serving schools across India and GCC countries, beginning with UAE.

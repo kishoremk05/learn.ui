@@ -10,7 +10,7 @@ const ERP_POINTS = [
 const STUDIQS_POINTS = [
   "No ERP Replacement required (works with any system)",
   "Easy Data Import (drag-and-drop spreadsheets)",
-  "CBSE Ready (board readiness predictions & CBSE mapping)",
+  "Matric/Stateboard and CBSE Ready (board readiness predictions & mapping)",
   "AI Insights (automatic topic gap and at-risk alerts)",
   "Stakeholder Dashboards (student, parent, teacher, management)",
 ];

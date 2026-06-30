@@ -12,7 +12,7 @@ const FAQS = [
   },
   {
     q: "Which boards and syllabuses does Studiqs support?",
-    a: "Studiqs is fully optimized for CBSE standards and Board exam readiness predictions, while also supporting custom international school grading systems.",
+    a: "Studiqs is fully optimized for Matric/Stateboard and CBSE standards and Board exam readiness predictions, while also supporting custom international school grading systems.",
   },
   {
     q: "How does Studiqs get our school data?",
@@ -36,7 +36,7 @@ function FAQPage() {
     >
       <div className="space-y-8 text-[15px] leading-[1.7] text-[#2a2a2a]/85">
         <p>
-          Can't find what you're looking for? Reach out to our school support team at <a href="mailto:hello@studiqs.com" className="text-[#c97a3a] hover:underline">hello@studiqs.com</a>.
+          Can't find what you're looking for? Reach out to our school support team at <a href="mailto:contact@studiqs.com" className="text-[#c97a3a] hover:underline">contact@studiqs.com</a>.
         </p>
 
         <div className="space-y-6 mt-8">
