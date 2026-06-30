@@ -245,7 +245,7 @@ export function PeopleSection() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center h-full">
                 
                 {/* Left Details Panel */}
-                <div className="lg:col-span-5 flex flex-col justify-between h-full">
+                <div className="lg:col-span-4 flex flex-col justify-between h-full">
                   <div>
                     <span 
                       className={`inline-flex items-center rounded-lg px-2.5 py-1 text-[10px] font-mono tracking-widest uppercase font-bold bg-[#efeadd]/60 border border-[#1a1a1a]/8`} 
@@ -293,8 +293,8 @@ export function PeopleSection() {
                 </div>
 
                 {/* Right Inner Workspace Widget */}
-                <div className="lg:col-span-7 flex items-center justify-center">
-                  <div className="w-full relative rounded-2xl overflow-hidden shadow-[0_12px_40px_-15px_rgba(26,26,26,0.18)] border border-[#1a1a1a]/8 transition-all duration-300">
+                <div className="lg:col-span-8 flex items-center justify-center">
+                  <div className="w-full relative rounded-none overflow-hidden shadow-[0_12px_40px_-15px_rgba(26,26,26,0.18)] border border-[#1a1a1a]/8 transition-all duration-300">
                     <img 
                       src={TABS[activeTab].image} 
                       alt={`${TABS[activeTab].label} Dashboard`} 
