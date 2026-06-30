@@ -6,25 +6,42 @@ const LINKS = ["How It Works", "Dashboards", "Studiqs AI", "Why Studiqs"];
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const past = useScrolledPast(50);
-  const [isOverDarkSection, setIsOverDarkSection] = useState(true);
+  const [isOverDarkSection, setIsOverDarkSection] = useState(false);
+  const [isOverLightHero, setIsOverLightHero] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      const darkSectionIds = ["hero-dark-band", "contact"];
-      let overDark = false;
+      // Check if navbar overlaps the light hero band on mobile
+      const lightSectionIds = ["hero-mobile-band"];
+      let overLight = false;
 
+      for (const id of lightSectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 70 && rect.bottom >= 0) {
+            overLight = true;
+            break;
+          }
+        }
+      }
+
+      // Also check for dark sections (like contact)
+      const darkSectionIds = ["contact"];
+      let overDark = false;
       for (const id of darkSectionIds) {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          // The navbar has height ~70px. If any part of the dark section overlaps the navbar's position (viewport top to 70px)
           if (rect.top <= 70 && rect.bottom >= 0) {
             overDark = true;
             break;
           }
         }
       }
+
       setIsOverDarkSection(overDark);
+      setIsOverLightHero(overLight);
     };
 
     handleScroll();
@@ -36,14 +53,10 @@ export function Navbar() {
     };
   }, []);
 
-  // On mobile (when max-width is not md), if the navbar is currently over a dark section and mobile menu is closed,
-  // we use the beige background (#e9e2d4) for high contrast.
-  // Otherwise (over light sections), we use the default dark background (#161616).
-  const isMobileBeige = isOverDarkSection && !open;
+  // Navbar is always dark on mobile
+  const isMobileBeige = false;
 
-  const shellClass = isMobileBeige
-    ? "bg-[#e9e2d4] border-b border-[#161616]/10 md:bg-[#161616] md:border-white/15"
-    : past
+  const shellClass = past
     ? "bg-[#161616] shadow-[0_8px_32px_-10px_rgba(0,0,0,0.6)] border-b border-white/20"
     : "bg-[#161616] border-b border-white/15";
 
@@ -58,9 +71,7 @@ export function Navbar() {
         {/* Brand */}
         <a
           href="#top"
-          className={`flex items-center gap-2 transition-colors duration-500 ${
-            isMobileBeige ? "text-[#161616] md:text-[#efeadd]" : "text-[#efeadd]"
-          }`}
+          className="flex items-center gap-2 transition-colors duration-500 text-[#efeadd]"
         >
           <span className="font-display text-[20px] tracking-tight">
             Studiqs<sup className="text-[10px] ml-[1px]">®</sup>
@@ -106,7 +117,7 @@ export function Navbar() {
               <line x1="18" y1="4" x2="4" y2="18" />
             </svg>
           ) : (
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke={isMobileBeige ? "#161616" : "#efeadd"} strokeWidth="2" strokeLinecap="round" className="transition-all duration-500" aria-hidden>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#efeadd" strokeWidth="2" strokeLinecap="round" className="transition-all duration-500" aria-hidden>
               <line x1="2" y1="6" x2="20" y2="6" />
               <line x1="2" y1="11" x2="20" y2="11" />
               <line x1="2" y1="16" x2="20" y2="16" />

@@ -1,7 +1,9 @@
 import heroBg from "../assets/hero bg 3.png";
+import heroBg2 from "../assets/hero bg 2.png";
 import { Arrow } from "./atoms";
 
 const HERO_BG = heroBg;
+const HERO_BG_MOBILE = heroBg2;
 
 const SUBJECTS = [
   { name: "Mathematics", score: 48,  priority: "High",   color: "#e05252", bg: "#fef2f2" },
@@ -274,21 +276,21 @@ export function Hero() {
         <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 sm:px-10 pt-[110px] pb-16 flex flex-col justify-between min-h-screen">
           <div className="flex flex-col justify-center flex-1 pt-8">
             <h1
-              className="font-display tracking-tight leading-[1.08] text-[38px] xl:text-[48px] max-w-[500px] animate-fade-up"
+              className="font-display tracking-tight leading-[1.08] text-[48px] xl:text-[58px] xxl:text-[64px] max-w-[600px] animate-fade-up"
               style={{ color: "#161616", animationDelay: "60ms" }}
             >
-              <span className="block" style={{ animationDelay: "80ms" }}>Transform School</span>
+              <span className="block" style={{ animationDelay: "80ms" }}>Transform Academic</span>
               <span className="block" style={{ animationDelay: "160ms" }}>
-                Data Into Academic{" "}
-                <span style={{ color: "#c97a3a" }}>Intelligence*</span>
+                Data Into Student{" "}
+                <span style={{ color: "#c97a3a" }}>Success*</span>
               </span>
             </h1>
 
             <p
-              className="mt-6 max-w-[440px] text-[15px] leading-[1.6] font-medium animate-fade-up"
+              className="mt-6 max-w-[500px] text-[16px] xl:text-[17px] leading-[1.6] font-medium animate-fade-up"
               style={{ color: "rgba(42,42,42,0.78)", animationDelay: "260ms" }}
             >
-              Studiqs helps schools identify topic gaps, academic risks, student readiness, parent engagement insights, and management intelligence through role-based dashboards.
+              An AI-driven Student Intelligence and Performance Analytics Platform that helps schools identify learning gaps, track progress, and empower teachers and parents with role-based dashboards.
             </p>
 
             <div
@@ -338,85 +340,109 @@ export function Hero() {
         </div>
       </div>
 
-      {/* ────────── MOBILE: Two-tone split ────────── */}
+      {/* ────────── MOBILE: Light hero with 3D brain image ────────── */}
 
-      {/* Dark top band */}
+      {/* Hero top band with brain image as full background */}
       <div
-        id="hero-dark-band"
-        className="lg:hidden w-full"
+        id="hero-mobile-band"
+        className="lg:hidden w-full relative overflow-hidden"
         style={{
-          background: "#161616",
-          paddingTop: "120px",
-          paddingBottom: "40px",
-          paddingLeft: "22px",
-          paddingRight: "22px",
+          paddingTop: "105px",
+          paddingBottom: "20px",
+          paddingLeft: "20px",
+          paddingRight: "20px",
         }}
       >
-        {/* Kicker badge */}
+        {/* Full background image */}
         <div
-          className="inline-flex items-center gap-2 rounded-full mb-5 text-[8.5px] font-mono tracking-[0.18em] uppercase animate-fade-up"
+          className="absolute inset-0 pointer-events-none select-none"
           style={{
-            background: "rgba(232,167,58,0.12)",
-            color: "#f0b352",
-            padding: "5px 12px",
-            border: "1px solid rgba(232,167,58,0.22)",
-            animationDelay: "40ms",
+            backgroundImage: `url(${HERO_BG_MOBILE})`,
+            backgroundSize: "cover",
+            backgroundPosition: "10% 12%",
+            backgroundRepeat: "no-repeat",
           }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#f0b352]" />
-          Academic Intelligence Platform
-        </div>
-
-        <h1
-          className="font-display tracking-tight leading-[1.07] animate-fade-up"
-          style={{
-            color: "#efeadd",
-            fontSize: "clamp(26px, 8vw, 36px)",
-            animationDelay: "100ms",
-          }}
-        >
-          Transform School
-          <br />
-          Data Into Academic{" "}
-          <span style={{ color: "#e8a73a" }}>Intelligence*</span>
-        </h1>
-
-        <p
-          className="mt-4 text-[13px] leading-[1.65] animate-fade-up"
-          style={{ color: "rgba(239,234,221,0.6)", animationDelay: "200ms" }}
-        >
-          Studiqs helps schools identify topic gaps, academic risks, student readiness, parent engagement insights, and management intelligence through role-based dashboards.
-        </p>
-
-        {/* CTAs */}
+        />
+        {/* Left gradient overlay for text readability */}
         <div
-          className="mt-7 flex flex-row gap-3 animate-fade-up"
-          style={{ animationDelay: "320ms" }}
-        >
-          <a
-            href="#platform"
-            className="group inline-flex items-center gap-1.5 rounded-full font-semibold text-[13.5px] transition-all active:scale-95"
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "linear-gradient(to right, rgba(233,226,212,0.95) 0%, rgba(233,226,212,0.82) 40%, rgba(233,226,212,0.2) 65%, transparent 80%)",
+          }}
+        />
+
+        {/* Content overlay */}
+        <div className="relative z-10">
+          {/* Kicker badge */}
+          <div
+            className="inline-flex items-center gap-1.5 rounded-full mb-3 text-[7.5px] font-mono tracking-[0.18em] uppercase animate-fade-up"
             style={{
-              background: "#e8a73a",
-              color: "#1a1a1a",
-              padding: "11px 20px",
-              boxShadow: "0 6px 20px -6px rgba(232,167,58,0.55)",
+              background: "rgba(232,167,58,0.12)",
+              color: "#c97a3a",
+              padding: "4px 10px",
+              border: "1px solid rgba(232,167,58,0.22)",
+              animationDelay: "40ms",
             }}
           >
-            Explore Platform <Arrow className="transition-transform group-hover:translate-x-0.5" />
-          </a>
-          <a
-            href="#demo"
-            className="inline-flex items-center rounded-full font-semibold text-[13.5px] transition-all active:scale-95"
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#e8a73a" }} />
+            AI Insight
+          </div>
+
+          <h1
+            className="font-display tracking-tight leading-[1.08] animate-fade-up"
             style={{
-              border: "1px solid rgba(239,234,221,0.2)",
-              color: "#efeadd",
-              padding: "11px 20px",
-              background: "rgba(255,255,255,0.06)",
+              color: "#161616",
+              fontSize: "clamp(24px, 7.5vw, 32px)",
+              animationDelay: "100ms",
+              maxWidth: "58%",
             }}
           >
-            Book Demo
-          </a>
+            Transform
+            <br />
+            Academic Data
+            <br />
+            Into Student
+            <br />
+            <span style={{ color: "#c97a3a" }}>Success*</span>
+          </h1>
+
+          <p
+            className="mt-3 text-[11.5px] leading-[1.55] animate-fade-up"
+            style={{ color: "rgba(22,22,22,0.55)", animationDelay: "200ms", maxWidth: "55%" }}
+          >
+            An AI-driven Student Intelligence and Performance Analytics Platform that helps schools identify learning gaps, track progress, and empower teachers and parents with role-based dashboards.
+          </p>
+
+          {/* CTAs */}
+          <div
+            className="mt-5 flex flex-col gap-2.5 animate-fade-up"
+            style={{ animationDelay: "320ms", maxWidth: "175px" }}
+          >
+            <a
+              href="#platform"
+              className="group inline-flex items-center justify-center gap-1.5 rounded-full font-semibold text-[12.5px] transition-all active:scale-95"
+              style={{
+                background: "#e8a73a",
+                color: "#1a1a1a",
+                padding: "10px 18px",
+                boxShadow: "0 6px 20px -6px rgba(232,167,58,0.55)",
+              }}
+            >
+              Explore Platform <Arrow className="transition-transform group-hover:translate-x-0.5" />
+            </a>
+            <a
+              href="#demo"
+              className="inline-flex items-center justify-center rounded-full font-semibold text-[12.5px] transition-all active:scale-95"
+              style={{
+                border: "1.5px solid rgba(26,26,26,0.22)",
+                color: "#1a1a1a",
+                padding: "10px 18px",
+                background: "rgba(255,255,255,0.3)",
+              }}
+            >
+              Book Demo
+            </a>
+          </div>
         </div>
       </div>
 
