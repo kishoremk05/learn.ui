@@ -276,18 +276,21 @@ export function Hero() {
         <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 sm:px-10 pt-[110px] pb-16 flex flex-col justify-between min-h-screen">
           <div className="flex flex-col justify-center flex-1 pt-8">
             <h1
-              className="font-display tracking-tight leading-[1.08] text-[48px] xl:text-[58px] xxl:text-[64px] max-w-[600px] animate-fade-up"
+              className="font-display tracking-tight leading-[1.08] text-[42px] xl:text-[50px] xxl:text-[56px] max-w-[600px] animate-fade-up"
               style={{ color: "#161616", animationDelay: "60ms" }}
             >
               <span className="block" style={{ animationDelay: "80ms" }}>Transform Academic</span>
               <span className="block" style={{ animationDelay: "160ms" }}>
-                Data Into Student{" "}
-                <span style={{ color: "#c97a3a" }}>Success*</span>
+                Data Into Student
+              </span>
+              <span className="block" style={{ animationDelay: "240ms", color: "#c97a3a" }}>
+                Success
+                <span className="opacity-60 text-[0.7em] relative -top-[0.15em] ml-1.5 inline-block font-sans select-none">✳︎</span>
               </span>
             </h1>
 
             <p
-              className="mt-6 max-w-[500px] text-[16px] xl:text-[17px] leading-[1.6] font-medium animate-fade-up"
+              className="mt-6 max-w-[500px] text-[14px] xl:text-[15px] leading-[1.6] font-medium animate-fade-up"
               style={{ color: "rgba(42,42,42,0.78)", animationDelay: "260ms" }}
             >
               An AI-driven Student Intelligence and Performance Analytics Platform that helps schools identify learning gaps, track progress, and empower teachers and parents with role-based dashboards.
@@ -392,7 +395,7 @@ export function Hero() {
             className="font-display tracking-tight leading-[1.08] animate-fade-up"
             style={{
               color: "#161616",
-              fontSize: "clamp(24px, 7.5vw, 32px)",
+              fontSize: "clamp(22px, 7vw, 28px)",
               animationDelay: "100ms",
               maxWidth: "58%",
             }}
@@ -403,11 +406,14 @@ export function Hero() {
             <br />
             Into Student
             <br />
-            <span style={{ color: "#c97a3a" }}>Success*</span>
+            <span className="inline-block" style={{ color: "#c97a3a" }}>
+              Success
+              <span className="opacity-60 text-[0.7em] relative -top-[0.15em] ml-1 inline-block font-sans select-none">✳︎</span>
+            </span>
           </h1>
 
           <p
-            className="mt-3 text-[11.5px] leading-[1.55] animate-fade-up"
+            className="mt-3 text-[11px] leading-[1.55] animate-fade-up"
             style={{ color: "rgba(22,22,22,0.55)", animationDelay: "200ms", maxWidth: "55%" }}
           >
             An AI-driven Student Intelligence and Performance Analytics Platform that helps schools identify learning gaps, track progress, and empower teachers and parents with role-based dashboards.
