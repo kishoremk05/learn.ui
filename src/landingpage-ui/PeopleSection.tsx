@@ -15,10 +15,10 @@ import {
   ChevronRight
 } from "lucide-react";
 
-import studentImg from "../assets/webp dashboard images/10th student dashboard.webp";
-import parentImg from "../assets/webp dashboard images/10th parent dashboard.webp";
-import teacherImg from "../assets/webp dashboard images/10th teacher dashboard.webp";
-import managementImg from "../assets/webp dashboard images/10th management dashboard.webp";
+import studentImg from "../assets/webp dashboard images/approved screens/12th student dashboard.webp";
+import parentImg from "../assets/webp dashboard images/approved screens/12th parent dashboard.webp";
+import teacherImg from "../assets/webp dashboard images/approved screens/12th teacherdashboard.webp";
+import managementImg from "../assets/webp dashboard images/approved screens/12th management dashboard.webp";
 
 type TabId = "students" | "parents" | "teachers" | "management";
 
