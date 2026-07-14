@@ -10,15 +10,19 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FooterPagesTermsChar38ConditionsRouteImport } from './routes/footer-pages/terms-&-conditions'
 import { Route as FooterPagesSupportRouteImport } from './routes/footer-pages/support'
 import { Route as FooterPagesSecurityRouteImport } from './routes/footer-pages/security'
+import { Route as FooterPagesPrivacyPolicyRouteImport } from './routes/footer-pages/privacy-policy'
 import { Route as FooterPagesPricingRouteImport } from './routes/footer-pages/pricing'
 import { Route as FooterPagesModulesRouteImport } from './routes/footer-pages/modules'
 import { Route as FooterPagesFeaturesRouteImport } from './routes/footer-pages/features'
 import { Route as FooterPagesFaqRouteImport } from './routes/footer-pages/faq'
 import { Route as FooterPagesDocumentationRouteImport } from './routes/footer-pages/documentation'
+import { Route as FooterPagesDisclaimerRouteImport } from './routes/footer-pages/disclaimer'
 import { Route as FooterPagesContactRouteImport } from './routes/footer-pages/contact'
 import { Route as FooterPagesCareersRouteImport } from './routes/footer-pages/careers'
+import { Route as FooterPagesAiDisclaimerRouteImport } from './routes/footer-pages/ai-disclaimer'
 import { Route as FooterPagesAboutRouteImport } from './routes/footer-pages/about'
 
 const IndexRoute = IndexRouteImport.update({
@@ -26,6 +30,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FooterPagesTermsChar38ConditionsRoute =
+  FooterPagesTermsChar38ConditionsRouteImport.update({
+    id: '/footer-pages/terms-&-conditions',
+    path: '/footer-pages/terms-&-conditions',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FooterPagesSupportRoute = FooterPagesSupportRouteImport.update({
   id: '/footer-pages/support',
   path: '/footer-pages/support',
@@ -36,6 +46,12 @@ const FooterPagesSecurityRoute = FooterPagesSecurityRouteImport.update({
   path: '/footer-pages/security',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FooterPagesPrivacyPolicyRoute =
+  FooterPagesPrivacyPolicyRouteImport.update({
+    id: '/footer-pages/privacy-policy',
+    path: '/footer-pages/privacy-policy',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FooterPagesPricingRoute = FooterPagesPricingRouteImport.update({
   id: '/footer-pages/pricing',
   path: '/footer-pages/pricing',
@@ -62,6 +78,11 @@ const FooterPagesDocumentationRoute =
     path: '/footer-pages/documentation',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FooterPagesDisclaimerRoute = FooterPagesDisclaimerRouteImport.update({
+  id: '/footer-pages/disclaimer',
+  path: '/footer-pages/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FooterPagesContactRoute = FooterPagesContactRouteImport.update({
   id: '/footer-pages/contact',
   path: '/footer-pages/contact',
@@ -70,6 +91,11 @@ const FooterPagesContactRoute = FooterPagesContactRouteImport.update({
 const FooterPagesCareersRoute = FooterPagesCareersRouteImport.update({
   id: '/footer-pages/careers',
   path: '/footer-pages/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FooterPagesAiDisclaimerRoute = FooterPagesAiDisclaimerRouteImport.update({
+  id: '/footer-pages/ai-disclaimer',
+  path: '/footer-pages/ai-disclaimer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FooterPagesAboutRoute = FooterPagesAboutRouteImport.update({
@@ -81,97 +107,125 @@ const FooterPagesAboutRoute = FooterPagesAboutRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/footer-pages/about': typeof FooterPagesAboutRoute
+  '/footer-pages/ai-disclaimer': typeof FooterPagesAiDisclaimerRoute
   '/footer-pages/careers': typeof FooterPagesCareersRoute
   '/footer-pages/contact': typeof FooterPagesContactRoute
+  '/footer-pages/disclaimer': typeof FooterPagesDisclaimerRoute
   '/footer-pages/documentation': typeof FooterPagesDocumentationRoute
   '/footer-pages/faq': typeof FooterPagesFaqRoute
   '/footer-pages/features': typeof FooterPagesFeaturesRoute
   '/footer-pages/modules': typeof FooterPagesModulesRoute
   '/footer-pages/pricing': typeof FooterPagesPricingRoute
+  '/footer-pages/privacy-policy': typeof FooterPagesPrivacyPolicyRoute
   '/footer-pages/security': typeof FooterPagesSecurityRoute
   '/footer-pages/support': typeof FooterPagesSupportRoute
+  '/footer-pages/terms-&-conditions': typeof FooterPagesTermsChar38ConditionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/footer-pages/about': typeof FooterPagesAboutRoute
+  '/footer-pages/ai-disclaimer': typeof FooterPagesAiDisclaimerRoute
   '/footer-pages/careers': typeof FooterPagesCareersRoute
   '/footer-pages/contact': typeof FooterPagesContactRoute
+  '/footer-pages/disclaimer': typeof FooterPagesDisclaimerRoute
   '/footer-pages/documentation': typeof FooterPagesDocumentationRoute
   '/footer-pages/faq': typeof FooterPagesFaqRoute
   '/footer-pages/features': typeof FooterPagesFeaturesRoute
   '/footer-pages/modules': typeof FooterPagesModulesRoute
   '/footer-pages/pricing': typeof FooterPagesPricingRoute
+  '/footer-pages/privacy-policy': typeof FooterPagesPrivacyPolicyRoute
   '/footer-pages/security': typeof FooterPagesSecurityRoute
   '/footer-pages/support': typeof FooterPagesSupportRoute
+  '/footer-pages/terms-&-conditions': typeof FooterPagesTermsChar38ConditionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/footer-pages/about': typeof FooterPagesAboutRoute
+  '/footer-pages/ai-disclaimer': typeof FooterPagesAiDisclaimerRoute
   '/footer-pages/careers': typeof FooterPagesCareersRoute
   '/footer-pages/contact': typeof FooterPagesContactRoute
+  '/footer-pages/disclaimer': typeof FooterPagesDisclaimerRoute
   '/footer-pages/documentation': typeof FooterPagesDocumentationRoute
   '/footer-pages/faq': typeof FooterPagesFaqRoute
   '/footer-pages/features': typeof FooterPagesFeaturesRoute
   '/footer-pages/modules': typeof FooterPagesModulesRoute
   '/footer-pages/pricing': typeof FooterPagesPricingRoute
+  '/footer-pages/privacy-policy': typeof FooterPagesPrivacyPolicyRoute
   '/footer-pages/security': typeof FooterPagesSecurityRoute
   '/footer-pages/support': typeof FooterPagesSupportRoute
+  '/footer-pages/terms-&-conditions': typeof FooterPagesTermsChar38ConditionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/footer-pages/about'
+    | '/footer-pages/ai-disclaimer'
     | '/footer-pages/careers'
     | '/footer-pages/contact'
+    | '/footer-pages/disclaimer'
     | '/footer-pages/documentation'
     | '/footer-pages/faq'
     | '/footer-pages/features'
     | '/footer-pages/modules'
     | '/footer-pages/pricing'
+    | '/footer-pages/privacy-policy'
     | '/footer-pages/security'
     | '/footer-pages/support'
+    | '/footer-pages/terms-&-conditions'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/footer-pages/about'
+    | '/footer-pages/ai-disclaimer'
     | '/footer-pages/careers'
     | '/footer-pages/contact'
+    | '/footer-pages/disclaimer'
     | '/footer-pages/documentation'
     | '/footer-pages/faq'
     | '/footer-pages/features'
     | '/footer-pages/modules'
     | '/footer-pages/pricing'
+    | '/footer-pages/privacy-policy'
     | '/footer-pages/security'
     | '/footer-pages/support'
+    | '/footer-pages/terms-&-conditions'
   id:
     | '__root__'
     | '/'
     | '/footer-pages/about'
+    | '/footer-pages/ai-disclaimer'
     | '/footer-pages/careers'
     | '/footer-pages/contact'
+    | '/footer-pages/disclaimer'
     | '/footer-pages/documentation'
     | '/footer-pages/faq'
     | '/footer-pages/features'
     | '/footer-pages/modules'
     | '/footer-pages/pricing'
+    | '/footer-pages/privacy-policy'
     | '/footer-pages/security'
     | '/footer-pages/support'
+    | '/footer-pages/terms-&-conditions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FooterPagesAboutRoute: typeof FooterPagesAboutRoute
+  FooterPagesAiDisclaimerRoute: typeof FooterPagesAiDisclaimerRoute
   FooterPagesCareersRoute: typeof FooterPagesCareersRoute
   FooterPagesContactRoute: typeof FooterPagesContactRoute
+  FooterPagesDisclaimerRoute: typeof FooterPagesDisclaimerRoute
   FooterPagesDocumentationRoute: typeof FooterPagesDocumentationRoute
   FooterPagesFaqRoute: typeof FooterPagesFaqRoute
   FooterPagesFeaturesRoute: typeof FooterPagesFeaturesRoute
   FooterPagesModulesRoute: typeof FooterPagesModulesRoute
   FooterPagesPricingRoute: typeof FooterPagesPricingRoute
+  FooterPagesPrivacyPolicyRoute: typeof FooterPagesPrivacyPolicyRoute
   FooterPagesSecurityRoute: typeof FooterPagesSecurityRoute
   FooterPagesSupportRoute: typeof FooterPagesSupportRoute
+  FooterPagesTermsChar38ConditionsRoute: typeof FooterPagesTermsChar38ConditionsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -181,6 +235,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/footer-pages/terms-&-conditions': {
+      id: '/footer-pages/terms-&-conditions'
+      path: '/footer-pages/terms-&-conditions'
+      fullPath: '/footer-pages/terms-&-conditions'
+      preLoaderRoute: typeof FooterPagesTermsChar38ConditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/footer-pages/support': {
@@ -195,6 +256,13 @@ declare module '@tanstack/react-router' {
       path: '/footer-pages/security'
       fullPath: '/footer-pages/security'
       preLoaderRoute: typeof FooterPagesSecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/footer-pages/privacy-policy': {
+      id: '/footer-pages/privacy-policy'
+      path: '/footer-pages/privacy-policy'
+      fullPath: '/footer-pages/privacy-policy'
+      preLoaderRoute: typeof FooterPagesPrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/footer-pages/pricing': {
@@ -232,6 +300,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FooterPagesDocumentationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/footer-pages/disclaimer': {
+      id: '/footer-pages/disclaimer'
+      path: '/footer-pages/disclaimer'
+      fullPath: '/footer-pages/disclaimer'
+      preLoaderRoute: typeof FooterPagesDisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/footer-pages/contact': {
       id: '/footer-pages/contact'
       path: '/footer-pages/contact'
@@ -244,6 +319,13 @@ declare module '@tanstack/react-router' {
       path: '/footer-pages/careers'
       fullPath: '/footer-pages/careers'
       preLoaderRoute: typeof FooterPagesCareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/footer-pages/ai-disclaimer': {
+      id: '/footer-pages/ai-disclaimer'
+      path: '/footer-pages/ai-disclaimer'
+      fullPath: '/footer-pages/ai-disclaimer'
+      preLoaderRoute: typeof FooterPagesAiDisclaimerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/footer-pages/about': {
@@ -259,15 +341,19 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FooterPagesAboutRoute: FooterPagesAboutRoute,
+  FooterPagesAiDisclaimerRoute: FooterPagesAiDisclaimerRoute,
   FooterPagesCareersRoute: FooterPagesCareersRoute,
   FooterPagesContactRoute: FooterPagesContactRoute,
+  FooterPagesDisclaimerRoute: FooterPagesDisclaimerRoute,
   FooterPagesDocumentationRoute: FooterPagesDocumentationRoute,
   FooterPagesFaqRoute: FooterPagesFaqRoute,
   FooterPagesFeaturesRoute: FooterPagesFeaturesRoute,
   FooterPagesModulesRoute: FooterPagesModulesRoute,
   FooterPagesPricingRoute: FooterPagesPricingRoute,
+  FooterPagesPrivacyPolicyRoute: FooterPagesPrivacyPolicyRoute,
   FooterPagesSecurityRoute: FooterPagesSecurityRoute,
   FooterPagesSupportRoute: FooterPagesSupportRoute,
+  FooterPagesTermsChar38ConditionsRoute: FooterPagesTermsChar38ConditionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

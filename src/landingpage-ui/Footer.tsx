@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
 
 const COLS = [
-  { h: "Product", l: ["Features", "Modules", "Pricing", "Security"] },
-  { h: "Company", l: ["About", "Contact", "Careers"] },
-  { h: "Resources", l: ["Documentation", "Support", "FAQ"] },
+  { h: "Product", l: ["Features", "Modules", "Security"] },
+  { h: "Company", l: ["About", "Contact"] },
+  { h: "Legal", l: ["Privacy Policy", "Terms & Conditions", "Disclaimer", "AI Disclaimer"] },
+  { h: "Support", l: ["FAQ", "Support"] },
 ];
 
 export function Footer() {
@@ -28,12 +29,20 @@ export function Footer() {
           <p className="mt-6 text-[12px] font-mono text-[#efeadd]/50 uppercase tracking-wider">
             Matric/Stateboard and CBSE Ready • India & GCC Countries
           </p>
-          <a
-            href="mailto:contact@studiqs.com"
-            className="mt-2 inline-block text-[14px] underline underline-offset-4 hover:text-[#f0b352] transition"
-          >
-            contact@studiqs.com
-          </a>
+          <div className="mt-3 flex flex-col gap-1 text-[14px]">
+            <a
+              href="mailto:contact@studiqs.com"
+              className="w-fit underline underline-offset-4 hover:text-[#f0b352] transition"
+            >
+              contact@studiqs.com
+            </a>
+            <span className="text-[#efeadd]/75">
+              Office Contact:{" "}
+              <a href="tel:9500590855" className="hover:text-[#f0b352] transition font-mono">
+                9500590855
+              </a>
+            </span>
+          </div>
           <p className="mt-3 text-[12px] text-[#efeadd]/60 italic font-medium">
             Serving schools across India and GCC countries, beginning with UAE.
           </p>
@@ -47,7 +56,7 @@ export function Footer() {
               {c.l.map((x) => (
                 <li key={x}>
                   <Link
-                    to={`/footer-pages/${x.toLowerCase().replace(" ", "-")}` as any}
+                    to={`/footer-pages/${x.toLowerCase().replace(/\s+/g, "-")}` as any}
                     className="hover:opacity-80 transition hover:text-[#f0b352]"
                   >
                     {x}

@@ -28,6 +28,13 @@ function ContactPage() {
               </div>
 
               <div>
+                <strong className="text-[#161616] block text-[13px] uppercase font-mono tracking-wider">Office Contact</strong>
+                <a href="tel:9500590855" className="text-[#c97a3a] text-[16px] font-semibold hover:underline font-mono">
+                  9500590855
+                </a>
+              </div>
+
+              <div>
                 <strong className="text-[#161616] block text-[13px] uppercase font-mono tracking-wider">Locations</strong>
                 <p className="mt-1 text-[14px]">
                   Dubai Office: Marina Plaza, Dubai Marina, UAE

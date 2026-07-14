@@ -9,39 +9,44 @@ function SupportPage() {
   return (
     <FooterPageLayout
       title="Support Center"
-      subtitle="Dedicated help and SLAs designed to ensure continuous school operations."
+      subtitle="We're Here to Help"
     >
-      <div className="space-y-8 text-[15px] leading-[1.7] text-[#2a2a2a]/85">
+      <div className="space-y-8 text-[15.5px] leading-[1.8] text-[#2a2a2a]/85">
         <p>
-          We know that school platforms are critical to daily operations. Our support teams are available globally and regionally to assist with any questions, training, or onboarding issues immediately.
+          The Studiqs team is committed to supporting schools throughout onboarding, implementation, and ongoing platform usage. Whether you have questions about platform usage, account access, or general assistance, our team is available to help.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
           <div className="border border-[#1a1a1a]/8 rounded-2xl bg-white p-6 shadow-sm">
-            <h3 className="font-display text-[18px] font-bold text-[#161616]">24/7 Monitoring</h3>
+            <h3 className="font-display text-[18px] font-bold text-[#161616]">Support Services</h3>
             <p className="mt-2 text-[13.5px] text-[#2a2a2a]/75">
-              Our engineering team continuously monitors systems to ensure maximum uptime, ensuring parent apps and admin dashboards load instantly.
+              We currently provide support for:
             </p>
+            <ul className="list-disc pl-5 mt-2 text-[13.5px] text-[#2a2a2a]/75 space-y-1">
+              <li>Account and access assistance</li>
+              <li>Platform guidance</li>
+              <li>Onboarding support</li>
+              <li>General enquiries</li>
+              <li>Service-related assistance</li>
+            </ul>
           </div>
 
           <div className="border border-[#1a1a1a]/8 rounded-2xl bg-white p-6 shadow-sm">
-            <h3 className="font-display text-[18px] font-bold text-[#161616]">Dedicated Support SLA</h3>
+            <h3 className="font-display text-[18px] font-bold text-[#161616]">Support Availability</h3>
             <p className="mt-2 text-[13.5px] text-[#2a2a2a]/75">
-              Standard plans include email support with a guaranteed 4-hour response time. Growth and Enterprise plans include phone support and under-1-hour response times.
+              Support requests are reviewed and responded to as promptly as possible during business operations. Response times may vary depending on the nature and complexity of the request.
             </p>
           </div>
         </div>
 
-        <h3 className="font-display text-[22px] font-bold text-[#161616] mt-8">Training & Onboarding</h3>
-        <p>
-          During the initial setup, our team hosts on-site or virtual training workshops for your school's administrators, registers teachers, and helps configure parental access permissions to ensure a smooth transition.
-        </p>
-        
-        <div className="bg-[#efeadd]/30 border border-[#1a1a1a]/5 rounded-2xl p-6 mt-8">
-          <h4 className="font-bold text-[#161616] mb-2 font-display">✳︎ Support Hotline</h4>
-          <p className="text-[13.5px]">
-            For urgent school assistance, administrators on our Growth and Enterprise plans can reach their dedicated support manager via phone or Slack channel directly.
+        <div className="border border-[#1a1a1a]/8 rounded-2xl bg-white p-6 shadow-sm mt-8">
+          <h4 className="font-bold text-[#161616] font-display">✳︎ Contact Support</h4>
+          <p className="text-[13.5px] mt-2 text-[#2a2a2a]/75">
+            For support requests or assistance, please contact:
           </p>
+          <a href="mailto:contact@studiqs.com" className="mt-2 inline-block text-[15px] font-semibold text-[#c97a3a] hover:underline">
+            contact@studiqs.com
+          </a>
         </div>
       </div>
     </FooterPageLayout>

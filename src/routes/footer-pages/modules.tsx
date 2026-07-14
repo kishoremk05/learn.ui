@@ -5,42 +5,45 @@ export const Route = createFileRoute("/footer-pages/modules")({
   component: ModulesPage,
 });
 
-const MODS = [
-  { name: "Topic Gap Analytics", desc: "Automated analysis of student mock tests and marks sheets to pinpoint specific weak concepts before exam periods.", tag: "Academics" },
-  { name: "Board Readiness Engine", desc: "AI-driven forecasting tool that uses historical mock exams and term records to predict final Board results.", tag: "Academics" },
-  { name: "Student Dashboard", desc: "Specialized student portal displaying personal topic checklists, strengths, and smart revision targets.", tag: "Dashboards" },
-  { name: "Parent Guidance Portal", desc: "Gives parents complete visibility into student growth trends and provides simple home-learning support tips.", tag: "Dashboards" },
-  { name: "Teacher Intervention Assistant", desc: "Automatically flags at-risk students and generates recommended curriculum revision plans for classrooms.", tag: "Intelligence" },
-  { name: "Management Foresight Console", desc: "Provides high-level school headers and district comparison charts tracking academic quality metrics.", tag: "Leadership" },
-  { name: "Future Readiness Scorer", desc: "Maps learning strengths to career streams and evaluates higher education benchmarks and readiness.", tag: "Future Planning" },
+const STAKEHOLDER_MODULES = [
+  { name: "Student Module", desc: "Provides students with visibility into their academic progress, strengths, and opportunities for improvement." },
+  { name: "Parent Module", desc: "Helps parents stay informed through simplified progress updates and educational insights." },
+  { name: "Teacher Module", desc: "Supports educators with classroom-level insights that assist teaching and intervention efforts." },
+  { name: "School Leadership Module", desc: "Provides school leadership with aggregated academic insights and institutional performance visibility." },
+  { name: "Educational Intelligence Module", desc: "Transforms educational data into meaningful insights, trends, and indicators to support informed decision-making." },
+  { name: "Security & Access Module", desc: "Ensures secure access, controlled permissions, and responsible handling of educational information." },
 ];
 
 function ModulesPage() {
   return (
     <FooterPageLayout
       title="Platform Modules"
-      subtitle="A modular architecture built to scale. Pick what your school needs today, expand when ready."
+      subtitle="Designed Around Educational Stakeholders"
     >
-      <div className="space-y-10 text-[15px] leading-[1.7] text-[#2a2a2a]/85">
+      <div className="space-y-8 text-[15.5px] leading-[1.8] text-[#2a2a2a]/85">
         <p>
-          Studiqs brings every aspect of school operations together. Each module is fully functional on its own, but integrates seamlessly with others to power our central AI analytics engine.
+          Studiqs delivers educational intelligence through modules designed to support different stakeholders within the learning ecosystem.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          {MODS.map((m, idx) => (
+          {STAKEHOLDER_MODULES.map((m, idx) => (
             <div key={m.name} className="border border-[#1a1a1a]/8 rounded-2xl bg-white p-6 shadow-sm">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[10px] font-mono tracking-widest text-[#2a2a2a]/60 uppercase bg-[#1a1a1a]/5 px-2 py-0.5 rounded">
-                  {m.tag}
-                </span>
                 <span className="text-[11px] font-mono text-[#c97a3a] font-semibold">
-                  M.{String(idx + 1).padStart(2, "0")}
+                  MODULE {String(idx + 1).padStart(2, "0")}
                 </span>
               </div>
               <h3 className="font-display text-[18px] font-bold text-[#161616]">{m.name}</h3>
               <p className="mt-2 text-[13.5px] text-[#2a2a2a]/75">{m.desc}</p>
             </div>
           ))}
+        </div>
+
+        <div className="bg-[#efeadd]/30 border border-[#1a1a1a]/5 rounded-2xl p-6 mt-8">
+          <h4 className="font-bold text-[#161616] mb-2 font-display">✳︎ Built to Support Schools Across Learning Stages</h4>
+          <p className="text-[13.5px]">
+            Studiqs is designed to support institutions across multiple academic stages and learning journeys while adapting to their educational needs.
+          </p>
         </div>
       </div>
     </FooterPageLayout>
