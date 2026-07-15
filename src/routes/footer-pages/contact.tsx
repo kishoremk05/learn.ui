@@ -33,17 +33,6 @@ function ContactPage() {
                   9500590855
                 </a>
               </div>
-
-              <div>
-                <strong className="text-[#161616] block text-[13px] uppercase font-mono tracking-wider">Locations</strong>
-                <p className="mt-1 text-[14px]">
-                  Dubai Office: Marina Plaza, Dubai Marina, UAE
-                  <br />
-                  Abu Dhabi: Al Khatem Tower, ADGM Square, Al Maryah Island, UAE
-                  <br />
-                  Sharjah: Sharjah Research Technology & Innovation Park, UAE
-                </p>
-              </div>
             </div>
           </div>
 
